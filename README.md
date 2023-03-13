@@ -1,3 +1,7 @@
+# Global China theme
+
+This is the Ghost theme for the website [globalchina.org](globalchina.org). It is modifed from the default ghost theme Casper. Below is the README for Casper.
+
 # Casper
 
 The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
