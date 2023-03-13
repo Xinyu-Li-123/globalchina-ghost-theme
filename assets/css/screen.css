@@ -436,7 +436,7 @@ production stylesheet in assets/built/screen.css
     font-weight: 500;
 }
 
-.gh-head-menu .nav {
+.gh-head-menu.nav {
     display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
@@ -446,22 +446,22 @@ production stylesheet in assets/built/screen.css
     padding: 0;
 }
 
-.gh-head-menu .nav li {
+.gh-head-menu.nav li {
     margin: 0;
     padding: 0;
 }
 
-.gh-head-menu .nav a {
+.gh-head-menu.nav a {
     display: inline-block;
     line-height: 1.7;
     color: inherit;
 }
 
-.gh-head-menu .nav a:hover {
+.gh-head-menu.nav a:hover {
     opacity: 0.9;
 }
 
-.gh-head-menu .nav-more-toggle {
+/* .gh-head-menu.nav-more-toggle {
     position: relative;
     width: 30px;
     height: 30px;
@@ -472,10 +472,10 @@ production stylesheet in assets/built/screen.css
     text-transform: inherit;
 }
 
-.gh-head-menu .nav-more-toggle svg {
+.gh-head-menu.nav-more-toggle svg {
     width: 24px;
     height: 24px;
-}
+} */
 
 @media (min-width: 992px) {
     body:not(.is-dropdown-loaded) .gh-head-menu .nav > li {

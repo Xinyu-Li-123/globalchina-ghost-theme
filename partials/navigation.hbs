@@ -1,10 +1,10 @@
 
 {{!-- copy-and-paste from the source code of ghost default navigation helper --}}
-<ul class="nav">
+
     {{!-- ignore navigation, use megamenu instead --}}
-    {{#foreach navigation}}
-    {{!-- <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a href="{{url absolute="true"}}">{{label}}</a></li> --}}
-    {{/foreach}}
+    {{!-- {{#foreach navigation}}
+        <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+    {{/foreach}} --}}
 
     {{> nav-megamenu/about }}
 
@@ -17,8 +17,6 @@
     {{> nav-megamenu/education }}
 
     {{> nav-megamenu/events }}
-
-</ul>
 
 {{!-- Sample megamenu content
 
