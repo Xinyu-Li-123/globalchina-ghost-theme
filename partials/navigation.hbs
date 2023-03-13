@@ -1,39 +1,48 @@
 
 {{!-- copy-and-paste from the source code of ghost default navigation helper --}}
 <ul class="nav">
+    {{!-- ignore navigation, use megamenu instead --}}
     {{#foreach navigation}}
-    <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
     {{/foreach}}
-    {{!-- modifed from https://www.w3schools.com/howto/howto_css_mega_menu.asp --}}
-    <li class="nav-bigsec dropdown">
-        <a href="#" class="dropbtn">Big Section
-        <i class="fa fa-caret-down"></i>
-        </a>
-        <div class="dropdown-content">
-        <div class="header">
-            <h2>Mega Menu</h2>
-        </div>
-        <div class="row">
-            <div class="column">
-            <h3>Category 1</h3>
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            </div>
-            <div class="column">
-            <h3>Category 2</h3>
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            </div>
-            <div class="column">
-            <h3>Category 3</h3>
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            </div>
-        </div>
-        </div>
-    </li>
+
+    {{!-- select and list all page with internal tag: "hash-megamenu" (an internal tag is of the form "#tag" in editor) --}}
+    {{!-- get one megamenu at a time to allow custom ordering of nav tabs --}}
+    {{#get "pages" filter="slug:megamenu-for-about"}}
+        {{#foreach pages}}  
+            {{content}}
+        {{/foreach}}
+    {{/get}}
+
+    {{#get "pages" filter="slug:megamenu-for-china-maps"}}
+        {{#foreach pages}}  
+            {{content}}
+        {{/foreach}}
+    {{/get}}
+
+    {{#get "pages" filter="slug:megamenu-for-research"}}
+        {{#foreach pages}}  
+            {{content}}
+        {{/foreach}}
+    {{/get}}
+
+    {{#get "pages" filter="slug:megamenu-for-policy"}}
+        {{#foreach pages}}  
+            {{content}}
+        {{/foreach}}
+    {{/get}}
+
+    {{#get "pages" filter="slug:megamenu-for-education"}}
+        {{#foreach pages}}  
+            {{content}}
+        {{/foreach}}
+    {{/get}}
+
+    {{#get "pages" filter="slug:megamenu-for-events"}}
+        {{#foreach pages}}  
+            {{content}}
+        {{/foreach}}
+    {{/get}}
+
+
 </ul>
 

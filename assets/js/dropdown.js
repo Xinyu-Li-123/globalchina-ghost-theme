@@ -69,6 +69,7 @@
         });
     }
 
+
     imagesLoaded(head, function () {
         makeDropdown();
     });
