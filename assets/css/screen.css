@@ -165,6 +165,7 @@ production stylesheet in assets/built/screen.css
     padding: 0;
     font-size: 5rem;
     font-weight: 800;
+    text-shadow: 0.2rem 0.2rem black;
 }
 
 .has-serif-title .site-title {
@@ -189,6 +190,7 @@ production stylesheet in assets/built/screen.css
     max-width: 960px;
     font-size: 6rem;
     font-weight: 700;
+    text-shadow: 0.1rem 0.1rem black;
     line-height: 1.1;
 }
 

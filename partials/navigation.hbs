@@ -1,0 +1,39 @@
+
+{{!-- copy-and-paste from the source code of ghost default navigation helper --}}
+<ul class="nav">
+    {{#foreach navigation}}
+    <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+    {{/foreach}}
+    {{!-- modifed from https://www.w3schools.com/howto/howto_css_mega_menu.asp --}}
+    <li class="nav-bigsec dropdown">
+        <a href="#" class="dropbtn">Big Section
+        <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+        <div class="header">
+            <h2>Mega Menu</h2>
+        </div>
+        <div class="row">
+            <div class="column">
+            <h3>Category 1</h3>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </div>
+            <div class="column">
+            <h3>Category 2</h3>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </div>
+            <div class="column">
+            <h3>Category 3</h3>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </div>
+        </div>
+        </div>
+    </li>
+</ul>
+
