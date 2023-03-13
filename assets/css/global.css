@@ -83,19 +83,28 @@ video {
     border: 0;
     font: inherit;
     font-size: 100%;
+    /* 
+        baseline: align element baseline with parent baseline
+        middle: align element middle with parent middle plus 
+            half of parent's x-height
+    */
     vertical-align: baseline;
 }
 body {
+    /* set height of a line box */
     line-height: 1;
 }
 ol,
 ul {
+    /* the style of the dot b/f each item in a list */
     list-style: none;
 }
 blockquote,
 q {
+    /* style of a quote (q or blockquote) */
     quotes: none;
 }
+/* remove any text inserted before / after the quote block by the browser */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -104,15 +113,22 @@ q:after {
     content: none;
 }
 table {
+    /* spacing b/t cell, `border-spacing <length>` */
     border-spacing: 0;
+    /* set cell inside table to share borders */
     border-collapse: collapse;
 }
 img {
+    /* set img to block-element (vertically stacked, with padding/border/margin) */
     display: block;
+    /* set max-width to 100% of its parent element */
     max-width: 100%;
+    /* set heigth according to width */
     height: auto;
 }
 html {
+    /* `width` is content box width. but if box-sizing is set to border-box, it set
+        width of the border area */
     box-sizing: border-box;
     font-family: sans-serif;
 
@@ -125,10 +141,13 @@ html {
     box-sizing: inherit;
 }
 a {
+    /* background includes content, padding, border, but not margin */
     background-color: transparent;
 }
 a:active,
 a:hover {
+    /* Unlike border, outline doesn't change the size of the element */
+    /* Also, outline is drawn outside border, overlapping with margin  */
     outline: 0;
 }
 b,
@@ -136,19 +155,50 @@ strong {
     font-weight: bold;
 }
 i,
+/* em: emphasis element */
 em,
+/* dfn: definition element */
 dfn {
     font-style: italic;
 }
 h1 {
+    /* 1 em equals to the current font size (by default, font size is 16px) */
     margin: 0.67em 0;
     font-size: 2em;
 }
 small {
+    /* set to 80% of parent font-size */
     font-size: 80%;
 }
+/* subscript and superscript */
 sub,
 sup {
+    /* 
+    `position` sets how an element is positioned in a document. 
+        The top, right, bottom, and left properties determine 
+        the final location of positioned elements. 
+    
+    static: positioned according to the normal flow. top, right,
+        bottom, left, and z-index have no effect.
+    
+    relative: positioned according to the normal flow, and then 
+        offset relative to itself based on the values of top, right,
+        bottom, and left. 
+        
+        The offset does not affect the position of any other elements;
+        thus, the space given for the element in the page layout is the
+        same as if position were static.
+    
+        create stacking context and z-index is applied
+    
+    absolute: removed from normal flow, no space is created from the element,
+        positioned relative to its closest positioned containing block. 
+        (an element is positioned if position is anything but static)
+        (compute position relative to the content box of that block)
+
+        create stacking context and z-index is applied
+
+    */
     position: relative;
     font-size: 75%;
     line-height: 0;
@@ -163,16 +213,18 @@ sub {
 img {
     border: 0;
 }
+/* target all svg element except for the root svg element */
 svg:not(:root) {
     overflow: hidden;
 }
+/* highlight */
 mark {
     background-color: #fdffb6;
 }
-code,
-kbd,
-pre,
-samp {
+code,   
+kbd,    /* keyboard input */
+pre,    /* preformatted text */
+samp {  /* sample output from a computer program */
     font-family: monospace, monospace;
     font-size: 1em;
 }
@@ -182,6 +234,7 @@ kbd {
     font-size: 1.5rem;
     background: #f6f8fa;
     border: 1px solid rgba(124, 139, 154, 0.25);
+    /* make round-corner border */
     border-radius: 6px;
     box-shadow: inset 0 -1px 0 rgba(124, 139, 154, 0.25);
 }
@@ -208,10 +261,13 @@ select {
     text-transform: none;
 }
 button,
+/* input element with type="button" */
 html input[type="button"],
 /* 1 */
 input[type="reset"],
 input[type="submit"] {
+    /* change cursor to a pointer when hovering over element,
+        indicating it's clickable */
     cursor: pointer; /* 3 */
 
     -webkit-appearance: button; /* 2 */
@@ -260,8 +316,8 @@ table {
     border-spacing: 0;
     border-collapse: collapse;
 }
-td,
-th {
+td,     /* table data cell */
+th {    /* table header cell */
     padding: 0;
 }
 
@@ -295,6 +351,7 @@ body {
     background: #daf2fd;
 }
 
+/* thematic break between paragraphs */
 hr {
     position: relative;
     display: block;

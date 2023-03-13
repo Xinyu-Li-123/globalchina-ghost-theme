@@ -3,46 +3,44 @@
 <ul class="nav">
     {{!-- ignore navigation, use megamenu instead --}}
     {{#foreach navigation}}
+    {{!-- <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a href="{{url absolute="true"}}">{{label}}</a></li> --}}
     {{/foreach}}
 
-    {{!-- select and list all page with internal tag: "hash-megamenu" (an internal tag is of the form "#tag" in editor) --}}
-    {{!-- get one megamenu at a time to allow custom ordering of nav tabs --}}
-    {{#get "pages" filter="slug:megamenu-for-about"}}
-        {{#foreach pages}}  
-            {{content}}
-        {{/foreach}}
-    {{/get}}
+    {{> nav-megamenu/about }}
 
-    {{#get "pages" filter="slug:megamenu-for-china-maps"}}
-        {{#foreach pages}}  
-            {{content}}
-        {{/foreach}}
-    {{/get}}
+    {{> nav-megamenu/maps }}
 
-    {{#get "pages" filter="slug:megamenu-for-research"}}
-        {{#foreach pages}}  
-            {{content}}
-        {{/foreach}}
-    {{/get}}
+    {{> nav-megamenu/research }}
 
-    {{#get "pages" filter="slug:megamenu-for-policy"}}
-        {{#foreach pages}}  
-            {{content}}
-        {{/foreach}}
-    {{/get}}
+    {{> nav-megamenu/policy }}
 
-    {{#get "pages" filter="slug:megamenu-for-education"}}
-        {{#foreach pages}}  
-            {{content}}
-        {{/foreach}}
-    {{/get}}
+    {{> nav-megamenu/education }}
 
-    {{#get "pages" filter="slug:megamenu-for-events"}}
-        {{#foreach pages}}  
-            {{content}}
-        {{/foreach}}
-    {{/get}}
-
+    {{> nav-megamenu/events }}
 
 </ul>
 
+{{!-- Sample megamenu content
+
+<div class="dropdown">
+    <a class="dropbtn" href="map">China Maps
+      <i class="fa fa-caret-down"></i>
+    </a>
+    <div class="dropdown-content">
+      <div class="row">
+        <div class="column">
+          <h3>Category 1</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        <div class="column">
+          <h3>Category 2</h3>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ --}}

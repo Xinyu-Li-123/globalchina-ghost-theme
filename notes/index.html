@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Bootstrap Website with Megamenu</title>
+	<!-- Include Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+<body>
+
+	<!-- Navigation Bar with Megamenu -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a class="navbar-brand" href="#">My Website</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+	<ul class="navbar-nav">
+		<li class="nav-item active">
+		<a class="nav-link" href="#">Home</a>
+		</li>
+
+		<!-- Megamenu -->
+		<li class="nav-item dropdown dropdown-mega">
+			<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Mega Menu</a>
+			<div class="dropdown-menu">
+			<div class="container-fluid">
+				<div class="row">
+				<div class="col-md-4">
+					<h5 class="dropdown-header">Section 1</h5>
+					<p class="dropdown-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in volutpat felis. Suspendisse eget enim ut odio molestie suscipit. Nulla facilisi. Sed bibendum, velit vitae bibendum consequat, massa elit aliquam elit, vel dapibus arcu neque eu nulla. Aenean a nulla magna. </p>
+					<img class="dropdown-img" src="https://via.placeholder.com/300x200" alt="Image">
+				</div>
+				<div class="col-md-4">
+					<h5 class="dropdown-header">Section 2</h5>
+					<ul class="list-unstyled">
+					<li><a href="#" class="dropdown-item">Link 1</a></li>
+					<li><a href="#" class="dropdown-item">Link 2</a></li>
+					<li><a href="#" class="dropdown-item">Link 3</a></li>
+					<li><a href="#" class="dropdown-item">Link 4</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h5 class="dropdown-header">Section 3</h5>
+					<ul class="list-unstyled">
+					<li><a href="#" class="dropdown-item">Link 5</a></li>
+					<li><a href="#" class="dropdown-item">Link 6</a></li>
+					<li><a href="#" class="dropdown-item">Link 7</a></li>
+					<li><a href="#" class="dropdown-item">Link 8</a></li>
+					</ul>
+				</div>
+				</div>
+			</div>
+			</div>
+		</li>
+	
+		<li class="nav-item">
+			<a class="nav-link" href="#">About</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Contact</a>
+		</li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Include Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

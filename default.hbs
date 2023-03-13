@@ -41,11 +41,6 @@
 
             <nav class="gh-head-menu">
                 {{navigation}}
-                {{#unless @site.members_enabled}}
-                    {{#match @custom.navigation_layout "Stacked"}}
-                        <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-                    {{/match}}
-                {{/unless}}
             </nav>
 
             <div class="gh-head-actions">
@@ -112,6 +107,7 @@ $(document).ready(function () {
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
+
 
 </body>
 </html>

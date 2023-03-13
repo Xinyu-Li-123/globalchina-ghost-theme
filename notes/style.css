@@ -1,0 +1,42 @@
+/* Custom styles for megamenu */
+.dropdown-mega {
+    position: static !important;
+  }
+  
+  .dropdown-mega .dropdown-menu {
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+    border-top: none;
+    border-radius: 0;
+    background-color: #ffffff;
+    box-shadow: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    animation: fade-in 0.2s;
+  }
+  
+  .dropdown-mega:hover .dropdown-menu {
+    opacity: 1;
+  }
+  
+  /* Animation */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .dropdown-mega .dropdown-header {
+    color: #000000;
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+    text-transform: uppercase;
+  }
+  
+  .dropdown-mega .dropdown-text {
+    color: #999999
+    }
