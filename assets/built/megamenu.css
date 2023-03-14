@@ -1,2 +1,2 @@
-@media (max-width:767px){.gh-head-menu .nav-item{width:100%}}
+.gh-head-menu .nav-item{position:static}@media (max-width:767px){.gh-head-actions{display:none!important}.gh-head-menu .nav-item{position:relative;width:100%;z-index:auto}}
 /*# sourceMappingURL=megamenu.css.map */

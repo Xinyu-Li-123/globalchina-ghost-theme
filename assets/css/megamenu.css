@@ -1,9 +1,20 @@
 /* make nav-link width=100% when in hamburger menu */
 
-
+.gh-head-menu .nav-item {
+  position: static;
+}
 
 @media (max-width: 767px) {
-  .gh-head-menu .nav-item{
-    width: 100%
+  /* hide actions so that it won't occlude megamenu dropdown */
+  .gh-head-actions{
+    display: none !important;
   }
+
+  .gh-head-menu .nav-item{
+    width: 100%;
+    position: relative;
+    z-index: auto;
+  }
+
+  
 }
