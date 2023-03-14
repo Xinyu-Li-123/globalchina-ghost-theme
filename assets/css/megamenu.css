@@ -4,17 +4,26 @@
   position: static;
 }
 
+/* on mobile phone */
 @media (max-width: 767px) {
   /* hide actions so that it won't occlude megamenu dropdown */
-  .gh-head-actions{
-    display: none !important;
+
+  #gh-head .gh-head-inner {
+    height: auto;
   }
 
-  .gh-head-menu .nav-item{
+  #gh-head .gh-head-menu .nav-item{
     width: 100%;
     position: relative;
     z-index: auto;
   }
 
+  #gh-head .gh-head-actions{
+    display: none !important;
+  }
+
+  #gh-head .gh-head-menu a:hover {
+    background-color: red;
+  }
   
 }

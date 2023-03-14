@@ -1,6 +1,8 @@
-[ ] make megamenu dropdown in hamburger menu (zindex front all nav items)
+[v] make megamenu dropdown in hamburger menu (zindex front all nav items)
 
-[ ] make megamenu dropdown in normal size a little less wider 
+[v] make megamenu dropdown in normal size a little less wider 
+
+[ ] make megamenu dropdown resize according to its content (bootstrap grid)
 
 [ ] make navbar shrink to hamburger on flex, so that there won't be 
     a two-row navbar

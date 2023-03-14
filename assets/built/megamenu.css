@@ -1,2 +1,2 @@
-.gh-head-menu .nav-item{position:static}@media (max-width:767px){.gh-head-actions{display:none!important}.gh-head-menu .nav-item{position:relative;width:100%;z-index:auto}}
+.gh-head-menu .nav-item{position:static}@media (max-width:767px){#gh-head .gh-head-inner{height:auto}#gh-head .gh-head-menu .nav-item{position:relative;width:100%;z-index:auto}#gh-head .gh-head-actions{display:none!important}#gh-head .gh-head-menu a:hover{background-color:red}}
 /*# sourceMappingURL=megamenu.css.map */
