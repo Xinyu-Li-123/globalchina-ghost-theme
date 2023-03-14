@@ -4,7 +4,7 @@
 
   /* The dropdown container */
   .dropdown {
-    float: left;
+    /* float: left; */
     overflow: hidden;
   }
   
@@ -68,13 +68,13 @@
   }
   
   /* Add a background color on hover */
-  .column a:hover {
+  /* .column a:hover {
     background-color: var(--ghost-accent-color);
-  }
+  } */
   
   /* Clear floats after the columns */
-  .row:after {
+  /* .row:after {
     content: "";
     display: table;
     clear: both;
-  }
+  } */

@@ -13,6 +13,9 @@
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
+    {{!-- stylesheet for bootstrap --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" crossorigin="anonymous">
+
     {{!-- stylesheet for megamenu --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/megamenu.css"}}" />
 
@@ -43,7 +46,7 @@
                 {{navigation}}
             </nav>
 
-            <div class="gh-head-actions">
+            {{!-- <div class="gh-head-actions">
                 {{#unless @site.members_enabled}}
                     {{^match @custom.navigation_layout "Stacked"}}
                         <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
@@ -63,7 +66,7 @@
                         {{/unless}}
                     </div>
                 {{/unless}}
-            </div>
+            </div> --}}
         </div>
     </header>
 
@@ -86,6 +89,8 @@
 </div>
 {{!-- /.viewport --}}
 
+{{!-- Scripts for Bootstraps --}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
 <script
