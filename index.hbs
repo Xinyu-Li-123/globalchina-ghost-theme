@@ -20,7 +20,8 @@ into the {body} of the default.hbs template --}}
         {{/if}}
     {{/if}}
 
-    {{#match @custom.header_style "!=" "Hidden"}}
+    {{!-- always put title in middle, and logo in top left --}}
+    {{!-- {{#match @custom.header_style "!=" "Hidden"}}
         <div class="site-header-inner inner">
             {{#match @custom.navigation_layout "Logo on cover"}}
                 {{#if @site.logo}}
@@ -29,6 +30,15 @@ into the {body} of the default.hbs template --}}
                     <h1 class="site-title">{{@site.title}}</h1>
                 {{/if}}
             {{/match}}
+            {{#if @site.description}}
+                <p class="site-description">{{@site.description}}</p>
+            {{/if}}
+        </div>
+    {{/match}} --}}
+
+    {{#match @custom.header_style "!=" "Hidden"}}
+        <div class="site-header-inner inner">
+            <h1 class="site-title">{{@site.title}}</h1>
             {{#if @site.description}}
                 <p class="site-description">{{@site.description}}</p>
             {{/if}}

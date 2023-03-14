@@ -291,7 +291,7 @@ production stylesheet in assets/built/screen.css
 
 .gh-head-inner {
     display: grid;
-    column-gap: 40px;
+    column-gap: 15px;
     grid-template-columns: auto 1fr auto;
     grid-auto-flow: row dense;
     align-items: center;
@@ -305,9 +305,9 @@ production stylesheet in assets/built/screen.css
     grid-template-columns: auto 1fr auto;
 }
 
-.is-head-left-logo.home-template .gh-head:not(.is-header-hidden) .gh-head-logo {
+/* .is-head-left-logo.home-template .gh-head:not(.is-header-hidden) .gh-head-logo {
     display: none;
-}
+} */
 
 /* .is-head-left-logo.home-template .gh-head:not(.is-header-hidden) .gh-head-menu {
     margin-left: -40px;

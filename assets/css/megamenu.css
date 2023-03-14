@@ -1,7 +1,30 @@
 /* make nav-link width=100% when in hamburger menu */
 
+.gh-head-menu .nav-link {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0.05rem 0.05rem #000;
+}
+
 .gh-head-menu .nav-item {
   position: static;
+}
+
+.gh-head-menu .nav-link + .dropdown-menu  {
+  display: none;
+  transform: translate3d(111px, 80px, 0px);
+}
+
+.gh-head-menu .nav-link:hover + .dropdown-menu  {
+  display: block;
+}
+
+.gh-head-menu .nav-link + .dropdown-menu:hover  {
+  display: block;
+}
+
+.gh-head-menu .nav-link:hover + .dropdown-menu:hover  {
+  display: block;
 }
 
 /* on mobile phone */
@@ -15,7 +38,29 @@
   #gh-head .gh-head-menu .nav-item{
     width: 100%;
     position: relative;
-    z-index: auto;
+  }
+
+  /* disable hover function when in hamburger menu */
+  .gh-head-menu .nav-link + .dropdown-menu  {
+    display: none;
+  }
+  
+  .gh-head-menu .nav-link:hover + .dropdown-menu  {
+    display: none;
+  }
+  
+  .gh-head-menu .nav-link + .dropdown-menu:hover  {
+    display: none;
+  }
+  
+  .gh-head-menu .nav-link:hover + .dropdown-menu:hover  {
+    display: none;
+  }
+
+  /* use megamenu.js to make the nav-item clickable in hamburger menu */
+  /* #gh-head .gh-head-menu .nav-item .dropdown-menu {
+    position: absolute;
+    transform: translate3d(0px, 54px, 0px)
   }
 
   #gh-head .gh-head-actions{
@@ -25,5 +70,5 @@
   #gh-head .gh-head-menu a:hover {
     background-color: red;
   }
-  
+   */
 }

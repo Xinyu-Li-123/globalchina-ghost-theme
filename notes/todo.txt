@@ -2,11 +2,24 @@
 
 [v] make megamenu dropdown in normal size a little less wider 
 
-[ ] make megamenu dropdown resize according to its content (bootstrap grid)
+[v] make megamenu dropdown resize according to its content (bootstrap grid)
 
-[ ] make navbar shrink to hamburger on flex, so that there won't be 
+[x] make navbar shrink to hamburger on flex, so that there won't be 
     a two-row navbar
+    
+    > ALT: adjust media query max-width and navbar width, so that it will 
+            shrink before wrapping (pixel-level control)
 
-[ ] make navbar font clearer
+[v] make navbar font clearer
+
+[ ] make megamenu click instead of hover in hamburger menu (mobile friendly)
+
+    On click, fill the screen with the megamenu page, so that I don't need to 
+    write a new megamenu dropdown 
+
+    Or I could just write another dropdown, and show it only when in hamburger menu
+    i.e. max-width=767px
+
+[ ] Make font-size in megamenu responsive
 
 [ ] make megamenu dropdown animation 
