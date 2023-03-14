@@ -1,0 +1,10 @@
+[ ] make megamenu dropdown in hamburger menu (zindex front all nav items)
+
+[ ] make megamenu dropdown in normal size a little less wider 
+
+[ ] make navbar shrink to hamburger on flex, so that there won't be 
+    a two-row navbar
+
+[ ] make navbar font clearer
+
+[ ] make megamenu dropdown animation 
