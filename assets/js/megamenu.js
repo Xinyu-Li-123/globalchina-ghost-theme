@@ -68,7 +68,7 @@
     $(window).resize(function() {
         // if max-width < 767px, then align to left
         if (window.matchMedia('(max-width: 767px)').matches) {
-            alert("less than 767")
+            // alert("less than 767")
             nav_items.each(function(i, c) {
                 // align relative to gh-head-menu
                 $(".dropdown-menu", c).css({
