@@ -65,16 +65,30 @@
     });
 
     // set dropdown-menu width and position to align with gh-head-menu on resize
-    // $(window).resize(function() {
-    //     nav_items.each(function(i, c) {
-    //         // align relative to gh-head-menu
-    //         $(".dropdown-menu", c).css({
-    //             "width": gh_head_menu.width(),
-    //             // "left": gh_head_menu.offset().left
-    //         });
-    //     });
-    //     // alert(left_nav_item.offset().left - $(".gh-head-menu").offset().left - 20)
-    // }).resize();
+    $(window).resize(function() {
+        // if max-width < 767px, then align to left
+        if (window.matchMedia('(max-width: 767px)').matches) {
+            alert("less than 767")
+            nav_items.each(function(i, c) {
+                // align relative to gh-head-menu
+                $(".dropdown-menu", c).css({
+                    "width": "100%",
+                    "left": 0,
+                });
+            });
+        }
+        else {
+            nav_items.each(function(i, c) {
+                // align relative to gh-head-menu
+                $(".dropdown-menu", c).css({
+                    "width": gh_head_menu.width(),
+                    "left": gh_head_menu.offset().left
+                });
+            });
+
+        }
+        // alert(left_nav_item.offset().left - $(".gh-head-menu").offset().left - 20)
+    }).resize();
 
 
 })();

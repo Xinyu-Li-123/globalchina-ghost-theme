@@ -40,12 +40,20 @@ div.gh-head
   /* visibility: hidden;  */
   /* opacity: 0.0;     */
   font-size: 2rem;
-  transform: translate3d(111px, 64px, 0px);
+  transform: translate3d(0px, 64px, 0px);
   margin: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 .gh-head-menu .nav-item .nav-link.active {
   background-color: red;
+  /* round-corner */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+
 }
 
 /* on mobile phone */
@@ -62,7 +70,7 @@ div.gh-head
 
   #gh-head .gh-head-menu .nav-item{
     width: 100%;
-    position: static;
+    position: relative;
   }
 
   /* TODO: use megamenu.js to make the nav-item clickable in hamburger menu */
