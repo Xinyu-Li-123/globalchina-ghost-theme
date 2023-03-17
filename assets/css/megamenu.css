@@ -42,6 +42,7 @@ div.gh-head
   font-size: 2rem;
   transform: translate3d(0px, 64px, 0px);
   margin: 0px;
+  border: black solid 0.2rem;
   border-top-left-radius: 0;
   border-top-right-radius: 0rem;
   border-bottom-left-radius: 0.5rem;
