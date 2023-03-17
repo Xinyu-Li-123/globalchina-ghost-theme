@@ -1,6 +1,8 @@
 (function(){
     // alert("load megamenu.js")
     const gh_head = $("#gh-head");
+    const gh_head_inner = $(".gh-head-inner");
+    const gh_head_menu = $(".gh-head-menu");
     const nav_items = $(".gh-head-menu .nav-item");
     
     // set z-index in reverse to the html code order,
@@ -9,13 +11,12 @@
         $(c).css('z-index', nav_items.length-i);
     });
 
-    // animation: slide down
+    // // animation: slide down
     // nav_items.each(function(i, c) {
     //     $(".nav-link", c).click(function(e) {
     //         console.log("click")
     //         e.preventDefault();
     //         e.stopPropagation();
-            
     //         // slide this one
     //         $(".dropdown-menu", c).slideToggle(200);
     //         // change nav-link background color
@@ -62,5 +63,18 @@
             });
         });
     });
+
+    // set dropdown-menu width and position to align with gh-head-menu on resize
+    // $(window).resize(function() {
+    //     nav_items.each(function(i, c) {
+    //         // align relative to gh-head-menu
+    //         $(".dropdown-menu", c).css({
+    //             "width": gh_head_menu.width(),
+    //             // "left": gh_head_menu.offset().left
+    //         });
+    //     });
+    //     // alert(left_nav_item.offset().left - $(".gh-head-menu").offset().left - 20)
+    // }).resize();
+
 
 })();
