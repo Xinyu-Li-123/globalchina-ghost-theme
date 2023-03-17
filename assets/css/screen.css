@@ -841,9 +841,10 @@ production stylesheet in assets/built/screen.css
 
 .post-feed {
     position: relative;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 4.8vmin 4vmin;
-    grid-template-columns: repeat(6, 1fr);
+    /* grid-template-columns: repeat(6, 1fr); */
     padding: max(4.8vmin, 36px) 0 0;
 }
 
@@ -866,23 +867,40 @@ production stylesheet in assets/built/screen.css
 
 .post-card {
     position: relative;
-    grid-column: span 2;
+    /* grid-column: span 2; */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-size: cover;
     word-break: break-word;
+}
+
+@media (max-width: 767px) {
+    .post-card {
+        flex-direction: column;
+    }
 }
 
 .post-card-image-link {
     position: relative;
     overflow: hidden;
-    display: block;
-    margin-bottom: 32px;
+    display: flex;
+    flex-grow: 2;
+    margin-right: 32px;
+    margin-bottom: 0px;
+    /* TODO: may need smarter way to set width? */
+    min-width: 300px;
 }
+
+@media (max-width: 767px) {
+    .post-card-image-link {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+}
+
 
 .post-card-image-link::after {
     content: "";
-    display: block;
     padding-bottom: 55%;
 }
 

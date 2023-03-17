@@ -19,6 +19,9 @@
     {{!-- stylesheet for megamenu --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/megamenu.css"}}" />
 
+    {{!-- stylesheet for slider --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/slider.css"}}" />
+
 
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
@@ -43,7 +46,7 @@
             </div>
 
             <nav class="gh-head-menu nav container-fluid">
-                {{navigation}}
+                {{> navigation}}
             </nav>
 
             <div class="gh-head-actions">
@@ -92,7 +95,6 @@ $(document).ready(function () {
 
 {{!-- Scripts for Bootstraps --}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
