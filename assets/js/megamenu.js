@@ -1,5 +1,5 @@
 (function(){
-    alert("load megamenu.js")
+    // alert("load megamenu.js")
     const gh_head = $("#gh-head");
     const nav_items = $(".gh-head-menu .nav-item");
     
@@ -9,28 +9,58 @@
         $(c).css('z-index', nav_items.length-i);
     });
 
-    // // make nav-link clickable, show/hide .dropdown-menu
+    // animation: slide down
     // nav_items.each(function(i, c) {
     //     $(".nav-link", c).click(function(e) {
     //         console.log("click")
     //         e.preventDefault();
     //         e.stopPropagation();
-    //         // add or remove .show class to .dropdown-menu
-    //         $(".dropdown-menu", c).toggleClass("show");
+            
+    //         // slide this one
+    //         $(".dropdown-menu", c).slideToggle(200);
+    //         // change nav-link background color
+    //         $(".nav-link", c).toggleClass("active");
+    //         // hide others without slide
+    //         nav_items.not(c).each(function(i, c) {
+    //             if ($(".dropdown-menu", c).is(":visible")) {
+    //                 $(".dropdown-menu", c).hide();
+    //             }
+    //             if ($(".nav-link", c).hasClass("active")) {
+    //                 $(".nav-link", c).removeClass("active");
+    //             }
+    //         });
     //     });
     // })
 
-    // inside hamburger menu, scroll to top on click
+    // animation: fade in/out
+    nav_items.each(function(i, c) {
 
-    // $(window).resize(function() {
-    //     // alert("resize");
+        $(".nav-link", c).click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-    //     $(".nav-item .dropdown-menu").width(
-    //         $(".gh-head-menu").width()
-    //     ).css({
-    //         left: $(".gh-head-menu").offset().left
-    //     })
+            // // if max-width < 767px, then scroll to top of nav-link
+            // if (gh_head.width() < 767) {
+            //     $("html, body").animate({
+            //         scrollTop: $(c).offset().top - 100
+            //     }, 200);
+            // }
 
-        
-    // }).resize();
+            // slide this one
+            $(".dropdown-menu", c).fadeToggle(200);
+            
+            // change nav-link background color
+            $(".nav-link", c).toggleClass("active");
+            // hide others without slide
+            nav_items.not(c).each(function(i, c) {
+                if ($(".dropdown-menu", c).is(":visible")) {
+                    $(".dropdown-menu", c).hide();
+                }
+                if ($(".nav-link", c).hasClass("active")) {
+                    $(".nav-link", c).removeClass("active");
+                }
+            });
+        });
+    });
+
 })();

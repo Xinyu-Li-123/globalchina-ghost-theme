@@ -37,21 +37,15 @@ div.gh-head
 .gh-head-menu .nav-item .dropdown-menu  {
   display: none;
   /* display: block; */
-  visibility: hidden; 
-  opacity: 0.0;       
-  /* transition: 0.3s; */
+  /* visibility: hidden;  */
+  /* opacity: 0.0;     */
   font-size: 2rem;
   transform: translate3d(111px, 64px, 0px);
   margin: 0px;
 }
 
-.gh-head-menu .nav-item .nav-link:hover + .dropdown-menu,
-.gh-head-menu .nav-item .nav-link + .dropdown-menu:hover,
-.gh-head-menu .nav-item .nav-link:hover + .dropdown-menu:hover {
-  display: block;
-  visibility: visible;
-  opacity: 1.0;
-  /* transition: 0.5s; */
+.gh-head-menu .nav-item .nav-link.active {
+  background-color: red;
 }
 
 /* on mobile phone */
