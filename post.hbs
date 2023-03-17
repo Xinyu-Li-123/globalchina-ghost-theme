@@ -13,17 +13,6 @@ into the {body} tag of the default.hbs template --}}
 
     <header class="article-header gh-canvas">
 
-        <div class="article-tag post-card-tags">
-            {{#primary_tag}}
-                <span class="post-card-primary-tag">
-                    <a href="{{url}}">{{name}}</a>
-                </span>
-            {{/primary_tag}}
-            {{#if featured}}
-                <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
-            {{/if}}
-        </div>
-
         <h1 class="article-title">{{title}}</h1>
 
         {{#if custom_excerpt}}
@@ -97,7 +86,7 @@ into the {body} tag of the default.hbs template --}}
 </main>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-{{#if @site.members_enabled}}
+{{!-- {{#if @site.members_enabled}}
 {{#unless @member}}
 {{#unless @site.comments_enabled}}
 {{#if access}}
@@ -113,7 +102,20 @@ into the {body} tag of the default.hbs template --}}
 {{/if}}
 {{/unless}}
 {{/unless}}
-{{/if}}
+{{/if}} --}}
+
+<div class="article-tag post-card-tags">
+    {{#if tags}}
+        {{#tags}}
+            <span class="post-card-primary-tag">
+                <a href="{{url}}">{{name}}</a>
+            </span>
+        {{/tags}}
+    {{/if}}
+    {{#if featured}}
+        <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+    {{/if}}
+</div>
 
 
 {{!-- Read more links, just above the footer --}}

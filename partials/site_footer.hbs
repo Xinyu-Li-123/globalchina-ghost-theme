@@ -1,0 +1,27 @@
+{{!-- The global footer at the very bottom of the screen --}}
+TODO:
+<footer class="site-footer outer">
+    <div class="inner" style="display: flex; flex-direction: row; ">
+
+        <div class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</div>
+        
+        <div class="social-media">
+            <h5>Find Us</h5>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        
+        <div class="footer-cta outer">
+            <div class="inner" style="display: block">
+                {{#if @custom.email_signup_text}}<h5 class="footer-cta-title">{{@custom.email_signup_text}}</h5>{{/if}}
+                <a class="footer-cta-button" href="#/portal" data-portal>
+                    <div class="footer-cta-input">Enter your email</div>
+                    <span>Subscribe</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</footer>

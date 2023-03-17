@@ -1804,18 +1804,23 @@ iframe.instagram-media + script + :not([id]) {
     transition: border-color 0.2s;
 }
 
-.footer-cta-button:hover {
+.footer-cta-button:hover span {
     border-color: color-mod(var(--color-border) l(-12%));
+    color: blue;
+    background-color: white;
+    transition: background-color 0.2s, color 0.2s;
+    
 }
 
 .footer-cta-button span {
     display: inline-block;
     padding: 9px 15px;
-    color: #fff;
+    background-color: var(--ghost-accent-color);
+    color: white;
+    transition: background-color 0.2s, color 0.2s;
     font-size: 1.6rem;
     font-weight: 600;
     letter-spacing: -0.005em;
-    background: var(--ghost-accent-color);
     border-radius: 6px;
 }
 
@@ -2117,6 +2122,11 @@ iframe.instagram-media + script + :not([id]) {
     }
 }
 
+.site-footer .social-media {
+    font-size: 3rem;
+    display: flex;
+    gap: 2rem;
+}
 
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
