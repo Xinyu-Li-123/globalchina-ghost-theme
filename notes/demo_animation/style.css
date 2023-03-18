@@ -1,0 +1,19 @@
+.animated-underscore {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .animated-underscore::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background-color: red;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .animated-underscore:hover::after {
+    width: 100%;
+  }

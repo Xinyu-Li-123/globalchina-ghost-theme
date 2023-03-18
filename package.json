@@ -2,7 +2,7 @@
     "name": "globalchina",
     "description": "Modified from the default theme Casper for the website globalchina.org",
     "demo": "https://demo.ghost.io",
-    "version": "5.4.5",
+    "version": "0.0.1",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -129,16 +129,6 @@
                 "default": "Center aligned",
                 "group": "homepage"
             },
-            "feed_layout": {
-                "type": "select",
-                "options": [
-                    "Classic",
-                    "Grid",
-                    "List"
-                ],
-                "default": "Classic",
-                "group": "homepage"
-            },
             "color_scheme": {
                 "type": "select",
                 "options": [
@@ -162,6 +152,11 @@
             "email_signup_text": {
                 "type": "text",
                 "default": "Sign up for more like this.",
+                "group": "post"
+            },
+            "footer_description": {
+                "type": "text",
+                "default": "INSERT DESCRIPTION",
                 "group": "post"
             },
             "show_recent_posts_footer": {

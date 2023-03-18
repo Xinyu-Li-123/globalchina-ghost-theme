@@ -104,7 +104,8 @@ into the {body} tag of the default.hbs template --}}
 {{/unless}}
 {{/if}} --}}
 
-<div class="article-tag post-card-tags">
+{{!-- TODO: add tag lists --}}
+{{!-- <div class="article-tag post-card-tags">
     {{#if tags}}
         {{#tags}}
             <span class="post-card-primary-tag">
@@ -115,7 +116,7 @@ into the {body} tag of the default.hbs template --}}
     {{#if featured}}
         <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
     {{/if}}
-</div>
+</div> --}}
 
 
 {{!-- Read more links, just above the footer --}}
@@ -125,18 +126,22 @@ into the {body} tag of the default.hbs template --}}
 
     This query gets the latest 3 posts on the site, but adds a filter to
     exclude the post we're currently on from being included. --}}
-    {{#get "posts" filter="id:-{{id}}" limit="3" as |more_posts|}}
 
+
+
+    {{#get "posts" filter="id:-{{id}}" limit="3" as |more_posts|}}
         {{#if more_posts}}
             <aside class="read-more-wrap outer">
                 <div class="read-more inner">
+                    <div class="title">
+                        Read Next
+                    </div>
                     {{#foreach more_posts}}
                         {{> "post-card"}}
                     {{/foreach}}
                 </div>
             </aside>
         {{/if}}
-
     {{/get}}
 {{/if}}
 

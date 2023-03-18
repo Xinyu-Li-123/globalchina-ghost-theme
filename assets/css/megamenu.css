@@ -30,17 +30,16 @@ div.gh-head
 .gh-head-menu .nav-item .nav-link {
   font-size: 2rem;
   font-weight: bold;
+  border: 0.2rem solid rgba(0, 0, 0, 0);
   text-shadow: 0.05rem 0.05rem #000;
-  transition: font-size 0.2s;
+  text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+  transition: text-decoration-color ease-in-out 0.2s, font-size 0.2s;
 }
 
 .gh-head-menu .nav-item .nav-link:hover,
 .gh-head-menu .nav-item .nav-link.active {
-  font-weight: bold;
-  /* underscore with cool animation */
-  text-shadow: 0.1rem 0.1rem #000;
-  font-size: 2.2rem;
-  transition: font-size 0.2s;
+  text-shadow: 0.5rem 0.5rem #000;
+  transition: ease-in-out 0.1s;
 }
 
 .gh-head-menu .nav-item .nav-link.active {
@@ -49,8 +48,15 @@ div.gh-head
   /* round-corner */
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-
+  text-shadow: 0.05rem 0.05rem #000;
+  transition: ease-in-out 0.1s;
 }
+
+.animated-underscore {
+  position: relative;
+  display: inline-block;
+}
+
 
 /* hide dropdown-menu unless hovered on nav-link or dropdown-menu */
 .gh-head-menu .nav-item .dropdown-menu  {
@@ -59,7 +65,7 @@ div.gh-head
   /* visibility: hidden;  */
   /* opacity: 0.0;     */
   font-size: 2rem;
-  transform: translate3d(0px, 64px, 0px);
+  /* transform: translate3d(0px, 64px, 0px); */
   margin: 0px;
   border: black solid 0.2rem;
   border-top-left-radius: 0;
@@ -95,7 +101,7 @@ div.gh-head
 
   #gh-head .gh-head-menu .nav-item .dropdown-menu {
     position: absolute;
-    transform: translate3d(0px, 54px, 0px);
+    /* transform: translate3d(0px, 54px, 0px); */
     font-size: 1.5rem;
     /* better fit dropdown into menu */
     margin: 0px;
@@ -107,5 +113,9 @@ div.gh-head
     display: none !important;
   }
 
+  .gh-head-menu .nav-item .nav-link:hover,
+  .gh-head-menu .nav-item .nav-link.active {
+    text-shadow: 0.05rem 0.05rem #000;
+  }
 
 }

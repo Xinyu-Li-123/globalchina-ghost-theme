@@ -858,12 +858,12 @@ production stylesheet in assets/built/screen.css
     }
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .post-feed {
         grid-template-columns: 1fr;
         grid-gap: 40px;
     }
-}
+} */
 
 .post-card {
     position: relative;
@@ -875,8 +875,18 @@ production stylesheet in assets/built/screen.css
 }
 
 @media (max-width: 767px) {
-    .post-card {
-        flex-direction: column;
+    .post-card-image-link,
+    .post-card-image {
+        width: 150px !important;
+        height: 93px !important;
+    }
+
+    .post-card-title {
+        font-size: 1.8rem !important;
+    }
+
+    .post-card-excerpt {
+        display: none !important;
     }
 }
 
@@ -884,18 +894,30 @@ production stylesheet in assets/built/screen.css
     position: relative;
     overflow: hidden;
     display: flex;
-    flex-grow: 2;
-    margin-right: 32px;
+    margin-left: 32px;
     margin-bottom: 0px;
     /* TODO: may need smarter way to set width? */
-    min-width: 300px;
+    width: 200px;
+    height: 124px;
 }
 
 @media (max-width: 767px) {
     .post-card-image-link {
-        margin-right: 0px;
+        margin-left: 0px;
         margin-bottom: 20px;
     }
+}
+
+@media (max-width: 898px) {
+    /* hide front image in read-more section */
+    .read-more .post-card-title {
+        font-size: 1.8rem;
+    }
+    .read-more .post-card-image-link {
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+
 }
 
 
@@ -949,10 +971,6 @@ production stylesheet in assets/built/screen.css
     position: relative;
     display: block;
     color: var(--color-darkgrey);
-}
-
-.post-card-content-link:hover {
-    text-decoration: none;
 }
 
 .post-feed .no-image .post-card-content-link {
@@ -1775,11 +1793,12 @@ iframe.instagram-media + script + :not([id]) {
 
 .footer-cta {
     position: relative;
-    text-align: center;
+    text-align: left;
+    padding: 0;
 }
 
 .footer-cta-title {
-    margin: 0 0 min(24px, 6.4vmin);
+    /* margin: 0 0 min(24px, 6.4vmin); */
     font-size: clamp(2.6rem, 5vw, 3.8rem);
     font-weight: 800;
 }
@@ -1794,7 +1813,7 @@ iframe.instagram-media + script + :not([id]) {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 500px;
+    /* max-width: 500px; */
     padding: 5px 5px 5px 15px;
     font-size: 1.7rem;
     color: var(--color-secondary-text);
@@ -1808,8 +1827,7 @@ iframe.instagram-media + script + :not([id]) {
     border-color: color-mod(var(--color-border) l(-12%));
     color: blue;
     background-color: white;
-    transition: background-color 0.2s, color 0.2s;
-    
+    transition: background-color 0.2s, color 0.2s; 
 }
 
 .footer-cta-button span {
@@ -1837,9 +1855,36 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 .read-more {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 4vmin;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 4vmin;
+    width: 80%;
+    /* grid-template-columns: repeat(6, 1fr); */
+    /* grid-gap: 4vmin; */
+}
+
+@media (max-width: 767px) {
+    .read-more {
+        width: 100%;
+    }
+}
+
+.read-more .title {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.read-more .title:after {
+    content: "";
+    height: 1px;
+    background: var(--color-border);
+    position: relative;
+    width: 100%;
+    margin-left: 4vmin;
 }
 
 .read-more .post-card-tags {
@@ -2049,83 +2094,130 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 .site-footer .inner {
-    display: grid;
-    grid-gap: 40px;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8vmin;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
+    align-items: center;
+}
+
+.site-footer .footer-top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+@media (max-width: 767px) {
+    .site-footer .footer-top {
+        flex-direction: column;
+        gap: 8vmin
+    }
+}
+
+.site-footer .footer-bottom {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.site-footer .footer-left,
+.site-footer .footer-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-footer h5 {
+    margin: 0 0 8px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.site-footer p {
+    margin: 0 0 8px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.site-footer .site-logo {
+    max-height: 80px;
+    margin: 0 auto 6vmin 0;
 }
 
 .site-footer .copyright a {
     color: #fff;
     letter-spacing: -0.015em;
     font-weight: 500;
-}
-
-.site-footer a {
-    color: rgba(255,255,255,0.7);
-}
-
-.site-footer a:hover {
-    color: rgba(255,255,255,1);
-    text-decoration: none;
-}
-
-.site-footer-nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0 0 20px;
-    padding: 0;
-    list-style: none;
-}
-
-.site-footer-nav li {
-    display: inline-flex;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    line-height: 2em;
-}
-
-.site-footer-nav a {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    margin-left: 10px;
-}
-
-.site-footer-nav li:not(:first-child) a:before {
-    content: "";
-    display: block;
-    width: 2px;
-    height: 2px;
-    margin: 0 10px 0 0;
-    background: #fff;
-    border-radius: 100%;
-}
-
-@media (max-width: 767px) {
-    .site-footer .inner {
-        max-width: 500px;
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-        text-align: center;
-    }
-    .site-footer .copyright,
-    .site-footer .copyright a {
-        color: #fff;
-        font-size: 1.5rem;
-    }
-    .site-footer .copyright {
-        margin-bottom: 16px;
-    }
+    font-size: 2.2rem
 }
 
 .site-footer .social-media {
     font-size: 3rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
+}
+
+.site-footer .social-media .social-media-link {
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.site-footer .social-media a {
+    color: #fff;
+    transition: all 0.1s ease-in-out;
+}
+
+.site-footer .social-media a:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.site-footer .footer-description {
+    margin-bottom: 4vmin;
+}
+
+.site-footer .footer-navbar {
+    margin-bottom: 4vmin;
+}
+
+.site-footer .footer-navbar ul {
+    padding: 0 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 1rem;
+    color: white;
+    font-weight: 600;
+}
+
+.site-footer .footer-navbar li {
+    font-size: 2rem;
+    list-style-type: disc;
+    margin-left: 2rem;
+}
+
+.site-footer .footer-navbar li a {
+    color: white;
+    font-weight: 600;
+    text-decoration: underline transparent;
+}
+
+.site-footer .footer-navbar li a:hover {
+    text-decoration: underline;
+    transition: 0.1s ease-in-out;
+}
+
+
+.site-footer .footer-navbar li.first {
+    list-style-type: none;
+    margin-left: 0;
 }
 
 /* 12. Dark Mode

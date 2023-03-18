@@ -74,6 +74,7 @@
                 $(".dropdown-menu", c).css({
                     "width": "100%",
                     "left": 0,
+                    "top": $(c).height(),
                 });
             });
         }
@@ -82,7 +83,9 @@
                 // align relative to gh-head-menu
                 $(".dropdown-menu", c).css({
                     "width": gh_head_menu.width(),
-                    "left": gh_head_menu.offset().left
+                    "left": gh_head_menu.offset().left,
+                    // including padding
+                    "top": gh_head_menu.offset().top + $(c).height() + 2,
                 });
             });
 
