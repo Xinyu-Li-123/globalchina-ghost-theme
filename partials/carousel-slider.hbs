@@ -6,27 +6,36 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
+
+
+  <!-- Inner -->
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="carousel-image" srcset="/content/images/size/w300/2023/02/sunshine.jpg 300w,
-                    /content/images/size/w600/2023/02/sunshine.jpg 600w,
-                    /content/images/size/w1000/2023/02/sunshine.jpg 1000w,
-                    /content/images/size/w2000/2023/02/sunshine.jpg 2000w" sizes="(max-width: 1000px) 400px, 800px" src="/content/images/size/w600/2023/02/sunshine.jpg" alt="Testing Post No.001 About" loading="lazy">
-        <div class="carousel-caption d-none d-md-block" style="
-            font-size: 2rem;
-            background: rgb(0,0,0,0.5);
-            border-radius: 1rem;">
+
+    <!-- select most reacent 5 featured posts and put into slider -->
+    {{#get "posts" filter="featured:true" limit="5" order="published_at DESC"}}
+      {{#foreach posts}}
+        <div class="carousel-item active">
+          {{!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100" alt="Sunset Over the City"/> --}}
+          <img class="d-block w-100" 
+              srcset="/content/images/size/w300/2023/02/sunshine.jpg 300w,
+                        /content/images/size/w600/2023/02/sunshine.jpg 600w,
+                        /content/images/size/w1000/2023/02/sunshine.jpg 1000w,
+                        /content/images/size/w2000/2023/02/sunshine.jpg 2000w" 
+              src="/content/images/size/w600/2023/02/sunshine.jpg" 
+              alt="Testing Post No.001 About" 
+              loading="lazy">
+          <div class="carousel-caption d-none d-md-block">
             <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
-        </div>
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </div>      
+      {{/foreach}}
+    {{/get}}  
+
+
   </div>
+  <!-- Inner -->
+
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
