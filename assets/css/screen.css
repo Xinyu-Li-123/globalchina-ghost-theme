@@ -2131,14 +2131,14 @@ iframe.instagram-media + script + :not([id]) {
 
 .site-footer h5 {
     margin: 0 0 8px;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #fff;
 }
 
 .site-footer p {
     margin: 0 0 8px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 500;
     color: #fff;
 }
