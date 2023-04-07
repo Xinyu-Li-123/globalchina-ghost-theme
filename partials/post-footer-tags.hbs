@@ -1,0 +1,12 @@
+<div class="article-tag-wrap outer post-footer">
+    <div class="article-tag post-card-tags inner">
+        {{#if tags}}
+            {{!-- iterate over tags --}}
+            {{#foreach tags}}
+                <span class="post-card-tag">
+                    <a href="{{url}}">{{name}}</a>
+                </span>
+            {{/foreach}}
+        {{/if}}
+    </div>
+</div>

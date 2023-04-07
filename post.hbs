@@ -13,6 +13,12 @@ into the {body} tag of the default.hbs template --}}
 
     <header class="article-header gh-canvas">
 
+        <div class="article-tag post-card-tags">
+            {{#if featured}}
+                <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+            {{/if}}
+        </div>
+
         <h1 class="article-title">{{title}}</h1>
 
         {{#if custom_excerpt}}
@@ -89,45 +95,7 @@ into the {body} tag of the default.hbs template --}}
 </article>
 </main>
 
-<div class="article-tag-wrap outer">
-    <div class="article-tag post-card-tags inner">
-        {{#if tags}}
-            {{#tags}}
-                <span class="post-card-tag">
-                    <a href="{{url}}">{{name}}</a>
-                </span>
-            {{/tags}}
-        {{/if}}
-        
-        {{#if featured}}
-            <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
-        {{/if}}
-    </div>
-
-
-</div>
-
-{{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-{{!-- {{#if @site.members_enabled}}
-{{#unless @member}}
-{{#unless @site.comments_enabled}}
-{{#if access}}
-    <section class="footer-cta outer">
-        <div class="inner">
-            {{#if @custom.email_signup_text}}<h2 class="footer-cta-title">{{@custom.email_signup_text}}</h2>{{/if}}
-            <a class="footer-cta-button" href="#/portal" data-portal>
-                <div class="footer-cta-input">Enter your email</div>
-                <span>Subscribe</span>
-            </a>
-        </div>
-    </section>
-{{/if}}
-{{/unless}}
-{{/unless}}
-{{/if}} --}}
-
-
-
+{{> "post-footer-tags"}}
 
 {{!-- Read more links, just above the footer --}}
 {{#if @custom.show_recent_posts_footer}}

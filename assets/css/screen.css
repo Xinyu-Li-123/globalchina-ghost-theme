@@ -1290,7 +1290,7 @@ html.no-infinite-scroll .pagination {
 .article-tag {
     margin-bottom: 16px;
     font-size: 1.6rem;
-    width: 80%;
+    width: 100%;
     position: relative;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -1307,6 +1307,7 @@ html.no-infinite-scroll .pagination {
 }
 
 .article-title {
+    padding-top: 1rem;
     margin-bottom: 0;
     font-size: clamp(3.2rem, 5vw, 5.2rem);
     font-weight: 800;
