@@ -874,6 +874,23 @@ production stylesheet in assets/built/screen.css
     word-break: break-word;
 }
 
+.post-card a,
+.post-card .post-card-tags a {
+    text-decoration: none;
+}
+
+.post-card a {
+    color: black;
+}
+
+.post-card .post-card-tags a {
+    color: grey;
+}
+
+.post-card a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 767px) {
     .post-card-image-link,
     .post-card-image {
@@ -1266,9 +1283,23 @@ html.no-infinite-scroll .pagination {
     padding-bottom: max(3.2vmin, 28px);
 }
 
+.article-tag-wrap {
+    margin-bottom: 8vmin;
+}
+
 .article-tag {
     margin-bottom: 16px;
     font-size: 1.6rem;
+    width: 80%;
+    position: relative;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .article-tag {
+        width: 100%;
+    }
 }
 
 .article-tag a {

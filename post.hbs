@@ -81,9 +81,26 @@ into the {body} tag of the default.hbs template --}}
             {{comments}}
         </section>
     {{/if}}
-
 </article>
 </main>
+
+<div class="article-tag-wrap outer">
+    <div class="article-tag post-card-tags inner">
+        {{#if tags}}
+            {{#tags}}
+                <span class="post-card-tag">
+                    <a href="{{url}}">{{name}}</a>
+                </span>
+            {{/tags}}
+        {{/if}}
+        
+        {{#if featured}}
+            <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+        {{/if}}
+    </div>
+
+
+</div>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
 {{!-- {{#if @site.members_enabled}}
@@ -104,19 +121,7 @@ into the {body} tag of the default.hbs template --}}
 {{/unless}}
 {{/if}} --}}
 
-{{!-- TODO: add tag lists --}}
-{{!-- <div class="article-tag post-card-tags">
-    {{#if tags}}
-        {{#tags}}
-            <span class="post-card-primary-tag">
-                <a href="{{url}}">{{name}}</a>
-            </span>
-        {{/tags}}
-    {{/if}}
-    {{#if featured}}
-        <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
-    {{/if}}
-</div> --}}
+
 
 
 {{!-- Read more links, just above the footer --}}

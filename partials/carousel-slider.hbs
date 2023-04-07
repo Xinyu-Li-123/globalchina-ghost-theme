@@ -14,14 +14,12 @@
 
     {{#get "posts" filter="featured:true,featured:false" limit="5"}}
       {{#foreach posts}}
-          <div class="carousel-item">
-          {{!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100" alt="Sunset Over the City"/> --}}
+        <div class="carousel-item">
           {{#if feature_image}}
               <a class="d-block w-100" href="{{url}}">
                   {{!-- This is a responsive image, it loads different sizes depending on device
                   https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-                  <img class="post-card-image"
-                      srcset="{{img_url feature_image size="s"}} 300w,
+                  <img srcset="{{img_url feature_image size="s"}} 300w,
                               {{img_url feature_image size="m"}} 600w,
                               {{img_url feature_image size="l"}} 1000w,
                               {{img_url feature_image size="xl"}} 2000w"
@@ -34,7 +32,7 @@
           {{!-- if no feature image, load dummy image instead --}}
           {{else}}
               <a class="d-block w-100" href="{{url}}">
-                <img src="{{asset image/dummy_carousel_bg.webp}}" 
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" 
                       class="d-block w-100" 
                       alt="Cliff Above a Stormy Sea"/>
               </a>
