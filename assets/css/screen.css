@@ -1470,6 +1470,15 @@ is the very first element in the post content */
     line-height: 1.6em;
 }
 
+.gh-content .kg-toggle-card .kg-toggle-content > embed {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    padding-top: 2rem;
+}
+
+
 .gh-content .kg-product-card .kg-product-card-description > p,
 .gh-content .kg-product-card .kg-product-card-description > ol,
 .gh-content .kg-product-card .kg-product-card-description > ul {

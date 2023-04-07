@@ -1,0 +1,35 @@
+{{!-- a collapsable display of pdf version of the post --}}
+
+<div class="kg-card kg-toggle-card" data-kg-toggle-state="close">
+    <div class="kg-toggle-heading">
+        <h4 class="kg-toggle-heading-text">Check out the PDF version of this post</h4>
+        <button class="kg-toggle-card-icon">
+            <svg id="Regular" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path class="cls-1" d="M23.25,7.311,12.53,18.03a.749.749,0,0,1-1.06,0L.75,7.311"></path></svg></button>
+    </div>
+    <div class="kg-toggle-content">
+        <embed class="fitvidsignore" src="http://localhost:2368/content/files/2023/04/HW-8.pdf#zoom=page-width" width="500" height="375" type="application/pdf">
+    </div>
+</div>
+
+<script>
+  const embed = document.querySelector('.fitvidsignore');
+
+  function setEmbedHeight() {
+    const width = embed.offsetWidth;
+    const height = width * 1.414;
+    embed.style.height = `${height}px`;
+  }
+
+  window.addEventListener('resize', setEmbedHeight);
+  setEmbedHeight();
+  
+  const toggle = document.querySelector('.kg-toggle-card');
+  window.addEventListener('resize', function() {
+    // request pdf only if the toggle is open
+    if (toggle.dataset.kgToggleState === 'open') {
+      const version = Date.now(); // Generate unique query string
+      embed.src = `http://localhost:2368/content/files/2023/04/HW-8.pdf?version=${version}`;
+    }
+  });
+</script>
