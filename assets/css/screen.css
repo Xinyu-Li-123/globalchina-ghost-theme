@@ -2162,14 +2162,14 @@ iframe.instagram-media + script + :not([id]) {
 
 .site-footer h5 {
     margin: 0 0 8px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #fff;
 }
 
 .site-footer p {
     margin: 0 0 8px;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
     color: #fff;
 }
@@ -2183,7 +2183,7 @@ iframe.instagram-media + script + :not([id]) {
     color: #fff;
     letter-spacing: -0.015em;
     font-weight: 500;
-    font-size: 2.2rem
+    font-size: 1.8rem
 }
 
 .site-footer .social-media {
@@ -2229,9 +2229,9 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 .site-footer .footer-navbar li {
-    font-size: 2rem;
+    font-size: 1.8rem;
     list-style-type: disc;
-    margin-left: 2rem;
+    margin-left: 1.8rem;
 }
 
 .site-footer .footer-navbar li a {

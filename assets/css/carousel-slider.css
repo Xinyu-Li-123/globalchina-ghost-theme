@@ -27,16 +27,25 @@
     overflow: hidden;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
     .carousel .carousel-item {
-        height: 600px;
+        height: 500px;
     }
     .carousel-item img {
-        min-height: 600px;
+        min-height: 500px;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 900px) {
+    .carousel .carousel-item {
+        height: 300px;
+    }
+    .carousel-item img {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 575px) {
     .carousel {
         height: 200px;
         min-height: 200px;
