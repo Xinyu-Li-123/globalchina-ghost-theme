@@ -892,6 +892,10 @@ production stylesheet in assets/built/screen.css
 }
 
 @media (max-width: 767px) {
+    .post-card {
+        padding-bottom: 2rem;
+    }
+
     .post-card-image-link,
     .post-card-image {
         width: 150px !important;
@@ -2137,7 +2141,7 @@ iframe.instagram-media + script + :not([id]) {
 .site-footer .inner {
     display: flex;
     flex-direction: column;
-    gap: 8vmin;
+    gap: 16svmin;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
     align-items: center;
@@ -2153,7 +2157,11 @@ iframe.instagram-media + script + :not([id]) {
 @media (max-width: 767px) {
     .site-footer .footer-top {
         flex-direction: column;
-        gap: 8vmin
+        gap: 20vmin
+    }
+
+    .site-footer .footer-right {
+        gap: 6vmin;
     }
 }
 
