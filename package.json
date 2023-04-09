@@ -98,15 +98,7 @@
                 ],
                 "default": "Logo on cover"
             },
-            "title_font": {
-                "type": "select",
-                "options": [
-                    "Modern sans-serif",
-                    "Elegant serif"
-                ],
-                "default": "Modern sans-serif"
-            },
-            "body_font": {
+            "font_family": {
                 "type": "select",
                 "options": [
                     "Modern sans-serif",
@@ -129,12 +121,20 @@
                 "default": "Center aligned",
                 "group": "homepage"
             },
+            "footer_description": {
+                "type": "text",
+                "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus, dolor sit amet feugiat viverra, purus risus bibendum neque, id efficitur elit lectus non metus.",
+                "group": "homepage"
+            },
+            "copyright_text": {
+                "type": "text",
+                "default": "My Daily Awesome",
+                "group": "homepage"
+            },
             "color_scheme": {
                 "type": "select",
                 "options": [
-                    "Light",
-                    "Dark",
-                    "Auto"
+                    "Light"
                 ],
                 "default": "Light"
             },
@@ -152,11 +152,6 @@
             "email_signup_text": {
                 "type": "text",
                 "default": "Sign up for more like this.",
-                "group": "post"
-            },
-            "footer_description": {
-                "type": "text",
-                "default": "INSERT DESCRIPTION",
                 "group": "post"
             },
             "show_recent_posts_footer": {

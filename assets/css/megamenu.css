@@ -44,7 +44,7 @@ div.gh-head
 
 .gh-head-menu .nav-item .nav-link.active {
   font-size: 2.4rem;
-  background-color: red;
+  background-color: var(--color-soft-red);
   /* round-corner */
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -118,4 +118,43 @@ div.gh-head
     text-shadow: 0.05rem 0.05rem #000;
   }
 
+}
+
+/* Style for content inside dropdown menu */
+
+.dropdown .dropdown-menu a {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.dropdown .dropdown-menu a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-soft-red);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.2s ease-out;
+}
+
+.dropdown .dropdown-menu a:hover:after {
+  transform: scaleX(1);
+}
+
+.dropdown .dropdown-menu a h5,
+.dropdown .dropdown-menu p {
+  margin: 0;
+}
+
+.dropdown .dropdown-menu a h5 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.dropdown .dropdown-menu p {
+  font-size: 1.rem;
 }

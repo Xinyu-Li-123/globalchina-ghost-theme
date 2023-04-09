@@ -50,7 +50,14 @@
 
         <div class="footer-bottom">
             <div class="copyright">
-                <a href="{{@site.url}}">Copyright &copy; {{date format="YYYY"}} {{@site.title}}</a>  </div>
+                <a href="{{@site.url}}">Copyright &copy; {{date format="YYYY"}} 
+                    {{#if @custom.copyright_text}}
+                        {{@custom.copyright_text}}
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                
+                </a>  </div>
         </div>
     </div>
 </footer>

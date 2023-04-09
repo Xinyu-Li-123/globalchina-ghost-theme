@@ -332,7 +332,7 @@ html {
 }
 body {
     color: var(--color-darkgrey);
-    font-family: var(--font-sans);
+    font-family: var(--font-sans);      /* Use font-sans as default*/
     font-size: 1.6rem;
     line-height: 1.6em;
     font-weight: 400;

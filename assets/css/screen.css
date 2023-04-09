@@ -42,6 +42,9 @@ production stylesheet in assets/built/screen.css
     --color-border: #e1e1e1;
     --color-wash: #e5eff5;
     --color-darkmode: #151719;
+    
+    /* Special Colors */
+    --color-soft-red: #E74C3C;
 
     /*
     An accent color is also set by Ghost itself in
@@ -68,6 +71,9 @@ production stylesheet in assets/built/screen.css
     flex-direction: column;
     min-height: 100vh;
 }
+
+
+
 
 .site-content {
     flex-grow: 1;
@@ -259,6 +265,30 @@ production stylesheet in assets/built/screen.css
     }
 }
 
+/* Parallax scrolling at index page */
+.home-template .site-header-content {
+  z-index: 1;
+}
+
+.home-template .site-header-content .site-header-cover {
+  position: fixed;
+}
+
+.home-template .site-main {
+  background-color: white;
+  padding-top: 4rem;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s ease-out;
+}
+
+.home-template .site-footer {
+  z-index: 2;
+}
+
+/* .home-template .site-footer {
+  margin: 0;
+} */
 
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
@@ -421,9 +451,24 @@ production stylesheet in assets/built/screen.css
     color: #fff;
 }
 
+
+
 .gh-head-logo img {
     max-height: 40px;
 }
+
+/* animation for icon */
+
+@media (min-width: 768px) {
+    .gh-head-logo {
+        transition: all 0.2s ease-in-out; /* Add a smooth transition effect */
+    }
+      
+    .gh-head-logo:hover {
+    transform: scale(1.2); /* Enlarge the icon by 20% on hover */
+    }
+}
+
 
 
 /* Primary Navigation
@@ -1071,10 +1116,6 @@ production stylesheet in assets/built/screen.css
     word-break: break-word;
 }
 
-.has-sans-body .post-card-excerpt {
-    font-family: var(--font-sans);
-}
-
 .post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
     -webkit-line-clamp: 2;
 }
@@ -1500,17 +1541,7 @@ is the very first element in the post content */
     font-size: 2.0rem;
 }
 
-.has-sans-body .gh-content > blockquote,
-.has-sans-body .gh-content > ol,
-.has-sans-body .gh-content > ul,
-.has-sans-body .gh-content > dl,
-.has-sans-body .gh-content > p,
-.has-sans-body .gh-content .kg-callout-card .kg-callout-text,
-.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ol,
-.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ul,
-.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > p {
-    font-family: var(--font-sans);
-}
+
 
 .gh-content > ul,
 .gh-content > ol,
@@ -1631,9 +1662,6 @@ except for when immediately preceeded by a heading */
     color: var(--color-midgrey);
 }
 
-.has-sans-body .kg-blockquote-alt {
-    font-family: var(--font-sans);
-}
 
 .kg-card.kg-header-card.kg-style-dark {
     background: var(--color-darkgrey);
@@ -2100,7 +2128,7 @@ iframe.instagram-media + script + :not([id]) {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
     .error-content {
         padding-top: 24vw;
     }
@@ -2131,11 +2159,13 @@ iframe.instagram-media + script + :not([id]) {
 
 .site-footer {
     position: relative;
-    margin: max(12vmin, 64px) 0 0 0;
+    /* margin: max(12vmin, 64px) 0 0 0; */
     padding-top: 48px;
     padding-bottom: 140px;
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
+    border: white solid;
+    border-width: max(12vmin,64px) 0 0;
 }
 
 .site-footer .inner {
@@ -2151,6 +2181,7 @@ iframe.instagram-media + script + :not([id]) {
     width: 100%;
     display: flex;
     flex-direction: row;
+    gap: 4vmin;
     text-align: left;
 }
 
@@ -2639,6 +2670,49 @@ html.dark-mode .footer-cta-title {
         color: #fff;
     }
 }
+
+
+/* 12. Customizable Font Familty
+/* ---------------------------------------------------------- */
+/* TODO: Customize font family for logical components: "Title" and "Body" defined by developer */
+
+/* Default version: One choice fits all */
+.viewport.has-sans-body {
+    font-family: var(--font-sans);
+  }
+  
+.viewport.has-serif-body {
+font-family: var(--font-serif);
+}
+
+/* Title */
+
+/* Body */
+/* .has-sans-body .post-card-excerpt {
+    font-family: var(--font-sans);
+}
+
+.has-sans-body .gh-content > blockquote,
+.has-sans-body .gh-content > ol,
+.has-sans-body .gh-content > ul,
+.has-sans-body .gh-content > dl,
+.has-sans-body .gh-content > p,
+.has-sans-body .gh-content .kg-callout-card .kg-callout-text,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ol,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ul,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > p {
+    font-family: var(--font-sans);
+}
+
+.has-sans-body .kg-blockquote-alt {
+    font-family: var(--font-sans);
+}
+
+.gh-content table:not(.gist table) {
+    font-family: var(--font-sans);
+} */
+
+
 
 /*
 

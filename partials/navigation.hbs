@@ -5,6 +5,8 @@
         <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
     {{/foreach}} --}}
 
+
+<nav class="gh-head-menu nav container-fluid">
     {{> nav-megamenu/about }}
 
     {{> nav-megamenu/maps }}
@@ -16,7 +18,7 @@
     {{> nav-megamenu/education }}
 
     {{> nav-megamenu/events }}
-
+</nav>
 {{!-- Sample megamenu content
 
 <div class="dropdown">

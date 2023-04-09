@@ -38,8 +38,13 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}} is-head-{{#match @custom.navigation_layout "Logo on cover"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}">
-<div class="viewport">
+<body class="{{body_class}} is-head-{{#match @custom.navigation_layout "Logo on cover"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}">
+<div class="viewport 
+{{#match @custom.font_family "=" "Modern sans-serif"}} 
+    has-sans-body
+{{else match @custom.font_family "=" "Elegant serif"}}
+    has-serif-body
+{{/match}}">
     {{> todolist}}
     <header id="gh-head" class="gh-head outer">
         <div class="gh-head-inner inner">
@@ -55,9 +60,8 @@
                 <button class="gh-burger"></button>
             </div>
 
-            <nav class="gh-head-menu nav container-fluid">
-                {{> navigation}}
-            </nav>
+            {{> navigation}}
+
 
             <div class="gh-head-actions">
                 <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
