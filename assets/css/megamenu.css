@@ -156,5 +156,6 @@ div.gh-head
 }
 
 .dropdown .dropdown-menu p {
-  font-size: 1.rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
 }

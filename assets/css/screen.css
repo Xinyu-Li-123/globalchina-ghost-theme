@@ -45,6 +45,7 @@ production stylesheet in assets/built/screen.css
     
     /* Special Colors */
     --color-soft-red: #E74C3C;
+    --color-soft-grey: #cccccc;
 
     /*
     An accent color is also set by Ghost itself in
@@ -459,12 +460,12 @@ production stylesheet in assets/built/screen.css
 
 /* animation for icon */
 
-@media (min-width: 768px) {
-    .gh-head-logo {
+@media (min-width: 800px) {
+    .gh-head-logo img {
         transition: all 0.2s ease-in-out; /* Add a smooth transition effect */
     }
       
-    .gh-head-logo:hover {
+    .gh-head-logo img:hover {
     transform: scale(1.2); /* Enlarge the icon by 20% on hover */
     }
 }
@@ -686,7 +687,7 @@ production stylesheet in assets/built/screen.css
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
     .gh-head-brand .gh-search {
         display: none;
     }
