@@ -1,9 +1,57 @@
 <nav class="pagination" role="navigation">
+    <a class="first-page" href="{{page_url $1}}">
+        <i class="fas fa-angle-double-left"></i>
+    </a>
     {{#if prev}}
-        <a class="newer-posts" href="{{page_url prev}}">&larr; Newer Posts</a>
+        <a class="prev-page" href="{{page_url prev}}">
+            <i class="fas fa-angle-left"></i>
+        </a>
     {{/if}}
-    <span class="page-number">Page {{page}} of {{pages}}</span>
+
+    {{!-- <span class="page-number">Page {{page}} of {{pages}}</span> --}}
+    <ul class="page-list">
+    </ul>
+
     {{#if next}}
-        <a class="older-posts" href="{{page_url next}}">Older Posts &rarr;</a>
+        <a class="next-page" href="{{page_url next}}">
+            <i class="fas fa-angle-right"></i>
+        </a>
     {{/if}}
+    <a class="last-page" href="{{page_url 10}}">
+        <i class="fas fa-angle-double-right"></i>
+    </a>
 </nav>
+
+<script>
+    function create_page_list() {
+        // create a page list with range [minPage, maxPage]
+        let curPage = {{page}};
+        let totalPage = {{pages}};
+
+        // let maxPageCount = 2;
+        // maxPageCount = Math.min(maxPageCount, totalPage);
+        // let minPage = Math.floor(curPage / maxPageCount)*maxPageCount + 1;
+        // let maxPage = Math.min(minPage + maxPageCount - 1, totalPage);
+
+        let pageListSpan = 2;
+        let minPage = Math.max(curPage - pageListSpan, 1);
+        let maxPage = Math.min(curPage + 2, totalPage);
+        if (maxPage - minPage + 1 < pageListSpan*2+1) {
+            if (minPage == 1){
+                maxPage = 1 + 2*pageListSpan;
+            } else {
+                minPage = totalPage - 2*pageListSpan;
+            }
+        }
+
+        let pageList = $(".page-list");
+        pageList.empty();
+        for (page = minPage; page < maxPage+1; page++){
+            let li = $("<li></li>").appendTo(pageList);
+            let a = $("<a></a>").appendTo(li);
+            a.text(page);
+            a.attr("href", "/page/" + page);
+        }
+    }
+    $(document).ready(create_page_list);
+</script>
