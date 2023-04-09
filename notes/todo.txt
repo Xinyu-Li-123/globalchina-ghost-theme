@@ -18,7 +18,7 @@
     write a new megamenu dropdown 
 
     Or I could just write another dropdown, and show it only when in hamburger menu
-    i.e. max-width=767px
+    i.e. max-width=800px
 
 [ ] Make font-size in megamenu responsive
 

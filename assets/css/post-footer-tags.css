@@ -35,7 +35,7 @@
   padding: 1rem;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .post-footer .article-tag {
     width: 100%;
   }

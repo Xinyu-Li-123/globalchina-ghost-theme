@@ -40,7 +40,7 @@
             e.preventDefault();
             e.stopPropagation();
 
-            // // if max-width < 767px, then scroll to top of nav-link
+            // // if max-width < 800px, then scroll to top of nav-link
             // if (gh_head.width() < 767) {
             //     $("html, body").animate({
             //         scrollTop: $(c).offset().top - 100
@@ -66,8 +66,8 @@
 
     // set dropdown-menu width and position to align with gh-head-menu on resize
     $(window).resize(function() {
-        // if max-width < 767px, then align to left
-        if (window.matchMedia('(max-width: 767px)').matches) {
+        // if max-width < 800px, then align to left
+        if (window.matchMedia('(max-width: 800px)').matches) {
             // alert("less than 767")
             nav_items.each(function(i, c) {
                 // align relative to gh-head-menu

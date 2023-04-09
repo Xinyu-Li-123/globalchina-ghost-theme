@@ -1,7 +1,7 @@
 // instead of a dropdown, we use a hamburger menu when there are too many items in the nav
 
 // (function () {
-//     const mediaQuery = window.matchMedia('(max-width: 767px)');
+//     const mediaQuery = window.matchMedia('(max-width: 800px)');
 
 //     const head = document.querySelector('.gh-head');
 //     const menu = head.querySelector('.gh-head-menu');
