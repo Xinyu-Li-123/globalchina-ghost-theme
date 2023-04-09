@@ -48,9 +48,13 @@
         pageList.empty();
         for (page = minPage; page < maxPage+1; page++){
             let li = $("<li></li>").appendTo(pageList);
+            if (page == curPage) {
+                li.addClass("current-page");
+            }
             let a = $("<a></a>").appendTo(li);
             a.text(page);
             a.attr("href", "/page/" + page);
+            
         }
     }
     $(document).ready(create_page_list);

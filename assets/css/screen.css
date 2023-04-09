@@ -1283,16 +1283,28 @@ make sure this only happens on large viewports / desktop-ish devices.
   margin-top: 50px;
   padding: 0;
   gap: 2rem;
+  text-align: center;
+}
+
+.pagination .page-list {
+  display: inline-block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  align-items: center;
 }
 
 .pagination li {
   display: inline-block;
   margin: 0 5px;
-  font-size: 2rem;
+  font-size: 1.8rem;
+}
+
+.pagination a {
+  color: black;
 }
 
 .pagination li a {
-  display: inline-block;
   padding: 5px 10px;
   color: #000;
   text-decoration: none;
@@ -1301,21 +1313,22 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .pagination li a:hover {
-  background-color: #EEE;
+  background-color: var(--ghost-accent-color);
+  color: white;
 }
 
-.pagination li.current-page a {
-  background-color: #007bff;
-  color: #FFF;
+.pagination li.current-page {
+  font-size: 2.2rem;
+  font-weight: bold;
 }
 
 .pagination a i {
-  font-size: 18px;
+  font-size: 2rem;
 }
 
 .pagination a.first-page i,
 .pagination a.last-page i {
-  font-size: 24px;
+  font-size: 2.2rem;
 }
 
 .pagination a.disabled {
@@ -1323,9 +1336,17 @@ make sure this only happens on large viewports / desktop-ish devices.
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .pagination li a {
       padding: 5px;
+  }
+
+  .pagination li {
+    display: none;
+  }
+
+  .pagination li.current-page {
+    display: block;
   }
 }
 
