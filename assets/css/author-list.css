@@ -1,0 +1,81 @@
+.author-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    margin-top: 4vmin;
+}
+
+.author-grid a {
+    text-decoration: none;
+}
+
+.author-card {
+    border: 1px solid #eee;
+    padding: 20px;
+}
+
+.author-card h2 {
+    font-size: 2.2rem;
+}
+
+.author-card p {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.author-card .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    overflow: hidden;
+    background-color: var(--ghost-accent-color);
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.profile-image-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    color: #fff;
+}
+
+@media (max-width: 800px) {
+    .author-card .profile-image {
+        width: 125px;
+        height: 125px;
+    }
+
+    .author-card h2 {
+        font-size: 2rem;
+    }
+    
+    .author-card p {
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+    }
+
+    .profile-image-placeholder {
+        border-radius: 75px;
+        font-size: 5rem;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .author-card .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-image-placeholder {
+        border-radius: 50px;
+        font-size: 4rem;
+    }
+
+}

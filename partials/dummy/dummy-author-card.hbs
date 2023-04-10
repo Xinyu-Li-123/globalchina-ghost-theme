@@ -1,0 +1,19 @@
+{{#get "authors" limit="all"}}
+    {{#foreach authors}}
+        <div class="author-list-wrapper">
+        <a href="{{url}}">
+            <div class="author-card">
+                <div class="profile-image">
+                {{#if profile_image}}
+                    <img src="{{img_url profile_image size="s"}}" alt="{{name}}">
+                {{else}}
+                    <span class="profile-image-placeholder">{{name.[0]}}</span>
+                {{/if}}
+                </div>
+                <h2>{{name}}</h2>
+                <p>{{bio}}</p>
+            </div>
+        </a>
+        {{/foreach}}
+    </div>
+{{/get}}

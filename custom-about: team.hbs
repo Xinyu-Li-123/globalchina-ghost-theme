@@ -1,0 +1,82 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} tag of the default.hbs template --}}
+
+{{!-- A leader must has special slug: "#leader NAME"; A staff must has special slug "#staff NAME" --}}
+
+{{#post}}
+{{!-- Everything inside the #post block pulls data from the post --}}
+
+<main id="site-main" class="site-main">
+
+{{> feature-image-to-banner}}
+
+<article class="article {{post_class}} {{#match @custom.post_image_style "Full"}}image-full{{else match @custom.post_image_style "=" "Small"}}image-small{{/match}}">
+    <section class="gh-content gh-canvas">
+        {{content}}
+
+        <link rel="stylesheet" type="text/css" href="{{asset "built/author-list.css"}}" />
+
+        {{!-- get all leaders by filtering with special slug --}}
+        <h1>Leadership</h1>
+        <div class="author-grid">
+        {{!-- A leader must has special slug: "#leader NAME" --}}
+        {{#get "authors" filter="slug:~'leader_'" limit="all"}}
+        {{#foreach authors}}
+            {{!-- the leader / staff card should lead to their personal websites if they upload ones to their profile --}}
+            {{#if website}}
+            <a href="{{website}}">
+            {{/if}}
+                <div class="author-card">
+                    <div class="profile-image">
+                    {{#if profile_image}}
+                        <img src="{{img_url profile_image size="s"}}" alt="{{name}}">
+                    {{else}}
+                        <span class="profile-image-placeholder">{{name.[0]}}</span>
+                    {{/if}}
+                    </div>
+                    <h2>{{name}}</h2>
+                    <p>{{bio}}</p>
+                </div>
+            {{#if website}}
+            </a>
+            {{/if}}
+        {{/foreach}}
+        {{/get}}
+        </div>
+
+        {{!-- get all staffs by filtering with special slug --}}
+        <h1>Staff</h1>  
+        <div class="author-grid">
+        {{!-- A leader must has special slug: "#leader NAME" --}}
+        {{#get "authors" filter="slug:~'staff_'" limit="all"}}
+        {{#foreach authors}}
+            {{#if website}}
+            <a href="{{website}}">
+            {{/if}}
+                <div class="author-card">
+                    <div class="profile-image">
+                    {{#if profile_image}}
+                        <img src="{{img_url profile_image size="s"}}" alt="{{name}}">
+                    {{else}}
+                        <span class="profile-image-placeholder">{{name.[0]}}</span>
+                    {{/if}}
+                    </div>
+                    <h2>{{name}}</h2>
+                    <p>{{bio}}</p>
+                </div>
+            {{#if website}}
+            </a>
+            {{/if}}
+        {{/foreach}}
+        {{/get}}
+        </div>
+        
+    </section>
+
+
+</article>
+</main>
+
+{{/post}}

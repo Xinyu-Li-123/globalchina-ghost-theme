@@ -1,6 +1,6 @@
 [ ] Fill in megamenu content
 
-[ ] Add pagination
+[v] Add pagination
 
 [ ] Add social media link
 
