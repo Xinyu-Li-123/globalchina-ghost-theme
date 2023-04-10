@@ -1,19 +1,56 @@
-<li class="nav-item dropdown ">
-    <a class="nav-link" href="#">
-    Maps
-    </a>
+<li class="nav-item dropdown">
+    <a class="nav-link" href="#">Maps</a>
     <!-- Dropdown menu -->
     <div class="dropdown-menu mt-0" aria-labelledby="navbarDropdown" style="border-top-left-radius: 0px; border-top-right-radius: 0px; position: absolute; inset: 0px auto auto 0px;;" data-popper-placement="bottom-start" data-mdb-popper="null">
-    <div class="container">
-        <div class="row my-4">
-        <div class="col-md-6 col-xl-3 mb-3 mb-xl-0">
-            <div class="pt-2">
-            <p class="text-uppercase font-weight-bold">
-                Explicabo voluptas
-            </p>
+        <div class="container">
+            <div class="row my-3">
+                <div class="col-md-6 col-xl-3 mb-3 mb-xl-0">
+                    <div class="pt-2">
+                        <i class="fas fa-caret-right pe-2" aria-hidden="true"></i>
+                        <a href="/maps">
+                            <h1>Maps</h1>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-md-12 col-lg-4 mb-3 mb-lg-0">
+                    <div class="pt-2">
+                        <div style="display:flex; flex-direction: column; align-items:center">
+                            <a href="/infrastructure-map">
+                                <img 
+                                    src="{{asset "image/dummy_image.jpg"}}" 
+                                    alt="Image 1" 
+                                    class="img-fluid mb-2">
+                                <h5 class="text-uppercase font-weight-bold">Infrastructure Map of Global China</h5>
+                            </a>
+                        </div>
+                        <p>Explore the infrastructure projects of China's global engagement with our comprehensive dataset and mapping tools.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4 mb-3 mb-lg-0">
+                    <div class="pt-2">
+                        <div style="display:flex; flex-direction: column; align-items:center">
+                            <a href="/digital-map">
+                                <img src="{{asset "image/dummy_image.jpg"}}" alt="Image 2" class="img-fluid mb-2">
+                                <h5 class="text-uppercase font-weight-bold">Digital Map of Global China</h5>
+                            </a>
+                        </div>
+                        <p>Explore the digital footprint of China's global engagement with our comprehensive dataset and mapping tools.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <div class="pt-2">
+                        <div style="display:flex; flex-direction: column; align-items:center">
+                            <a href="/belt-and-road-map">
+                                <img src="{{asset "image/dummy_image.jpg"}}" alt="Image 3" class="img-fluid mb-2">
+                                <h5 class="text-uppercase font-weight-bold">Belt and Road Initiative</h5>
+                            </a>
+                        </div>
+                        <p>Explore the Belt and Road Initiative of China's global engagement with our comprehensive dataset and mapping tools.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
-    </div>
     </div>
 </li>

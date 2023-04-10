@@ -145,6 +145,7 @@ div.gh-head
   transform: scaleX(1);
 }
 
+.dropdown .dropdown-menu a h1,
 .dropdown .dropdown-menu a h5,
 .dropdown .dropdown-menu p {
   margin: 0;
@@ -153,9 +154,16 @@ div.gh-head
 .dropdown .dropdown-menu a h5 {
   font-size: 1.8rem;
   font-weight: bold;
+  height: 4rem;
+}
+
+.dropdown .dropdown-menu a h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
 }
 
 .dropdown .dropdown-menu p {
   font-size: 1.25rem;
   line-height: 2rem;
 }
+
