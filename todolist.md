@@ -1,4 +1,8 @@
 [ ] Fill in megamenu content
+    [ ] About
+    [ ] Maps
+    [ ] Research
+    [ ] Events
 
 [v] Add pagination
 
@@ -7,3 +11,5 @@
 [ ] Add footer section title link
 
 [ ] Add posts
+
+[ ] Modify author page

@@ -37,10 +37,12 @@
         let minPage = Math.max(curPage - pageListSpan, 1);
         let maxPage = Math.min(curPage + 2, totalPage);
         if (maxPage - minPage + 1 < pageListSpan*2+1) {
-            if (minPage == 1){
-                maxPage = 1 + 2*pageListSpan;
+            if (minPage < 2*pageListSpan + 1){
+                minPage = 1;
+                maxPage = Math.min(totalPage, 1 + 2*pageListSpan);
             } else {
-                minPage = totalPage - 2*pageListSpan;
+                minPage = Math.max(1, totalPage - 2*pageListSpan);
+                maxPage = totalPage;
             }
         }
 
