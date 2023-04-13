@@ -9,6 +9,10 @@
     text-decoration: none;
 }
 
+.author-grid a:hover {
+    text-decoration: none;
+}
+
 .author-card {
     border: 1px solid #eee;
     padding: 20px;

@@ -1,5 +1,7 @@
+Current: 
+
 [ ] Fill in megamenu content
-    [ ] About
+    [x] About
     [ ] Maps
     [ ] Research
     [ ] Events
@@ -12,4 +14,10 @@
 
 [ ] Add posts
 
-[ ] Modify author page
+[ ] Generate PDF at the bottom
+
+[x] Modify author page
+
+Future: 
+
+[ ] Add author social media metadata as icons
