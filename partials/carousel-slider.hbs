@@ -28,19 +28,20 @@
                       alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
                       loading="lazy"
                   />
-              </a>
+              
           {{!-- if no feature image, load dummy image instead --}}
           {{else}}
               <a class="d-block w-100" href="{{url}}">
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" 
                       class="d-block w-100" 
                       alt="Cliff Above a Stormy Sea"/>
-              </a>
+              
           {{/if}}
           <div class="carousel-caption d-md-block">
             <h5 class="post-card-title">{{title}}</h5>
             <p class="post-card-excerpt">{{#if excerpt}}{{excerpt}}{{/if}}</p>
           </div>
+          </a>
         </div>      
       {{/foreach}}
     {{/get}}  

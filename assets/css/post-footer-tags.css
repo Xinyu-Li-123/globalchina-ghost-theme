@@ -19,6 +19,11 @@
   transition: all 0.2s ease-in-out;
 }
 
+.post-footer .post-card-tags .post-card-tag:hover {
+  background-color: var(--ghost-accent-color);
+  color: white;
+}
+
 .post-footer .post-card-tag {
   color: inherit;
   text-decoration: none;
