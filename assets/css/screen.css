@@ -78,6 +78,7 @@ production stylesheet in assets/built/screen.css
 
 .site-content {
     flex-grow: 1;
+    z-index: 4;
 }
 
 /* Full width page blocks */
@@ -299,6 +300,7 @@ production stylesheet in assets/built/screen.css
     font-size: 1.6rem;
     line-height: 1.3em;
     background-color: #fff;
+    z-index: 5;     /* gh-head > site-content > site-footer */
 }
 
 .has-cover:not(.home-template) .gh-head {
@@ -2228,6 +2230,7 @@ iframe.instagram-media + script + :not([id]) {
     background: color-mod(var(--color-darkgrey) l(-5%));
     border: white solid;
     border-width: max(12vmin,64px) 0 0;
+    z-index: 3;
 }
 
 .site-footer .inner {
