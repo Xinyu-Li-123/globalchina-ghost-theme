@@ -154,7 +154,6 @@ div.gh-head
 .dropdown .dropdown-menu a h5 {
   font-size: 1.8rem;
   font-weight: bold;
-  height: 4rem;
 }
 
 .dropdown .dropdown-menu a h1 {
@@ -167,3 +166,26 @@ div.gh-head
   line-height: 2rem;
 }
 
+.dropdown .pt-2 {
+  width: 100%;
+}
+
+.dropdown .col-md-12 {
+  width: 33%;
+}
+.dropdown .dropdown-container {
+  padding: 10px;
+}
+
+@media (max-width: 800px) {
+  .dropdown .dropdown-container {
+      width: 100%;
+      padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dropdown .col-md-12 {
+    width: 80%;
+  }
+}

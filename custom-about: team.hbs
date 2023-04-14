@@ -23,7 +23,29 @@ into the {body} tag of the default.hbs template --}}
         <link rel="stylesheet" type="text/css" href="{{asset "built/author-list.css"}}" />
         <div class="author-grid">
         {{!-- A leader must has special slug: "#leader NAME" --}}
-        {{#get "authors" filter="slug:~'leader-'" limit="all"}}
+        {{#get "authors" filter="slug:~'leader-maria'" limit="all"}}
+        {{#foreach authors}}
+            {{!-- the leader / staff card should lead to their personal websites if they upload ones to their profile --}}
+            {{#if website}}
+            <a href="{{website}}">
+            {{/if}}
+                <div class="author-card">
+                    <div class="profile-image">
+                    {{#if profile_image}}
+                        <img src="{{img_url profile_image size="s"}}" alt="{{name}}">
+                    {{else}}
+                        <span class="profile-image-placeholder">{{name.[0]}}</span>
+                    {{/if}}
+                    </div>
+                    <h2>{{name}}</h2>
+                    <p>{{bio}}</p>
+                </div>
+            {{#if website}}
+            </a>
+            {{/if}}
+        {{/foreach}}
+        {{/get}}
+        {{#get "authors" filter="slug:~'leader-jiayong'" limit="all"}}
         {{#foreach authors}}
             {{!-- the leader / staff card should lead to their personal websites if they upload ones to their profile --}}
             {{#if website}}

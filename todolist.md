@@ -10,13 +10,17 @@ Current:
 
 [ ] Add social media link
 
-[ ] Add footer section title link
+[v] Add footer section title link
 
-[ ] Add posts
+[v] Add posts
 
-[ ] Generate PDF at the bottom
+[v] Generate PDF at the bottom
 
 [x] Modify author page
+
+[ ] add events
+
+[ ] add author websites and staff
 
 Future: 
 
