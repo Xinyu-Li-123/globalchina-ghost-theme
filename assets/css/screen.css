@@ -296,7 +296,7 @@ production stylesheet in assets/built/screen.css
     font-size: 1.6rem;
     line-height: 1.3em;
     background-color: #fff;
-    z-index: 5;     /* gh-head > site-content > site-footer */
+    z-index: 6;     /* gh-head > site-footer > site-content */
 }
 
 .has-cover:not(.home-template) .gh-head {

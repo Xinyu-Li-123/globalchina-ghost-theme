@@ -20,10 +20,17 @@
                             <div class="pt-2">
                                 <div style="display:flex; flex-direction: column; align-items:center">
                                     <a href="{{url}}">
-                                        <img 
-                                            src="{{asset "image/dummy_image.jpg"}}" 
-                                            alt="Image 1" 
-                                            class="img-fluid mb-2">
+                                        {{#if feature_image}}
+                                            <img 
+                                                src="{{feature_image}}" 
+                                                alt="Image 1" 
+                                                class="img-fluid mb-2">
+                                        {{else}}
+                                            <img 
+                                                src="{{asset "image/dummy_image.jpg"}}" 
+                                                alt="Image 1" 
+                                                class="img-fluid mb-2" >
+                                        {{/if}}
                                         <h5 class="text-uppercase font-weight-bold">{{title}}</h5>
                                     </a>
                                 </div>

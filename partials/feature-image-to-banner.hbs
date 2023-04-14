@@ -13,11 +13,12 @@ This script
 }
 .article-image .image-container {
     position: relative;
+    height: 250px;
+    overflow: hidden;
 }
 .article-image .image-container img {
     display: block;
     width: 100%;
-    height: 250px;
 }
 .article-image .image-container:after {
     content: "";
@@ -64,6 +65,7 @@ This script
             https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
             {{#if feature_image}}
             <img
+                class="article-image-banner"
                 srcset="{{img_url feature_image size="s"}} 300w,
                         {{img_url feature_image size="m"}} 600w,
                         {{img_url feature_image size="l"}} 1000w,
@@ -74,6 +76,7 @@ This script
             />
             {{else}}
             <img
+                class="article-image-banner"
                 sizes="(min-width: 1400px) 1400px"
                 src="/content/images/size/w2000/2023/04/dummy-hero-image-1.jpg"
             />
@@ -91,6 +94,11 @@ This script
     // place header s.t. its bottom is 10px above the bottom of the image
     window.onresize = function() {
         $(".article-header").css("top", $(".image-container").height() + $(".gh-head.outer").height() - $(".article-header").height() - 10 + "px");
+        if ($(".article-image-banner").height() < 250) {
+            $(".article-image-banner").css("height", "250px");
+        }
     }
     window.onresize();
+
+    
 </script>
