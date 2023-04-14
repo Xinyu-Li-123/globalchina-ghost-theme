@@ -173,6 +173,7 @@ div.gh-head
 .dropdown .col-md-12 {
   width: 33%;
 }
+
 .dropdown .dropdown-container {
   padding: 10px;
 }
@@ -182,10 +183,15 @@ div.gh-head
       width: 100%;
       padding: 10px;
   }
+  .dropdown .col-md-12 {
+    width: 50%;
+  }
 }
 
 @media (max-width: 600px) {
   .dropdown .col-md-12 {
-    width: 80%;
+    width: 96%;
+    position: relative;
+    left: 2%;
   }
 }
