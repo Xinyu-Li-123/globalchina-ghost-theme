@@ -14,42 +14,26 @@
                 </div>
             </div>
             <div class="row my-3">
-                <div class="col-md-12 col-lg-4 mb-3 mb-lg-0">
-                    <div class="pt-2">
-                        <div style="display:flex; flex-direction: column; align-items:center">
-                            <a href="/infrastructure-map">
-                                <img 
-                                    src="{{asset "image/dummy_image.webp"}}" 
-                                    alt="Image 1" 
-                                    class="img-fluid mb-2">
-                                <h5 class="text-uppercase font-weight-bold">Infrastructure Map of Global China</h5>
-                            </a>
+                {{#get "pages" filter="slug:~'map-'" limit="all"}}
+                    {{#foreach pages}}
+                        <div class="col-md-12 col-lg-4 mb-3 mb-lg-0">
+                            <div class="pt-2">
+                                <div style="display:flex; flex-direction: column; align-items:center">
+                                    <a href="{{url}}">
+                                        <img 
+                                            src="{{asset "image/dummy_image.jpg"}}" 
+                                            alt="Image 1" 
+                                            class="img-fluid mb-2">
+                                        <h5 class="text-uppercase font-weight-bold">{{title}}</h5>
+                                    </a>
+                                </div>
+                                {{#if excerpt}}
+                                    <p>{{excerpt}}</p>                                    
+                                {{/if}}
+                            </div>
                         </div>
-                        <p>Explore the infrastructure projects of China's global engagement with our comprehensive dataset and mapping tools.</p>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4 mb-3 mb-lg-0">
-                    <div class="pt-2">
-                        <div style="display:flex; flex-direction: column; align-items:center">
-                            <a href="/digital-map">
-                                <img src="{{asset "image/dummy_image.webp"}}" alt="Image 2" class="img-fluid mb-2">
-                                <h5 class="text-uppercase font-weight-bold">Digital Map of Global China</h5>
-                            </a>
-                        </div>
-                        <p>Explore the digital footprint of China's global engagement with our comprehensive dataset and mapping tools.</p>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4">
-                    <div class="pt-2">
-                        <div style="display:flex; flex-direction: column; align-items:center">
-                            <a href="/belt-and-road-map">
-                                <img src="{{asset "image/dummy_image.webp"}}" alt="Image 3" class="img-fluid mb-2">
-                                <h5 class="text-uppercase font-weight-bold">Belt and Road Initiative</h5>
-                            </a>
-                        </div>
-                        <p>Explore the Belt and Road Initiative of China's global engagement with our comprehensive dataset and mapping tools.</p>
-                    </div>
-                </div>
+                    {{/foreach}}
+                {{/get}}
             </div>
         </div>
     </div>
