@@ -284,10 +284,6 @@ production stylesheet in assets/built/screen.css
   transition: transform 0.2s ease-out;
 }
 
-.home-template .site-footer {
-  z-index: 2;
-}
-
 /* .home-template .site-footer {
   margin: 0;
 } */
@@ -313,7 +309,6 @@ production stylesheet in assets/built/screen.css
     top: 0;
     right: 0;
     left: 0;
-    z-index: 2000;
     background-color: transparent;
     color: #fff;
 }
@@ -2230,7 +2225,7 @@ iframe.instagram-media + script + :not([id]) {
     background: color-mod(var(--color-darkgrey) l(-5%));
     border: white solid;
     border-width: max(12vmin,64px) 0 0;
-    z-index: 3;
+    z-index: 5;
 }
 
 .site-footer .inner {
