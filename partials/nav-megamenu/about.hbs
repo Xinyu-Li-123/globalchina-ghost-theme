@@ -4,39 +4,23 @@
     <div class="dropdown-menu mt-0" aria-labelledby="navbarDropdown" style="position: absolute; inset: 0px auto auto 0px;;" data-popper-placement="bottom-start" data-mdb-popper="null">
         <div class="dropdown-container">
             <div class="row my-3 d-flex">
-                <div class="col-md-12 col-lg-4 mb-3 mb-lg-0" style="flex-grow: 1;">
-                    <div class="pt-2">
-                        <i class="fas fa-caret-right pe-2" aria-hidden="true"></i>
-                        <a href="/about">
-                            <h5 class="text-uppercase font-weight-bold">Our Mission</h5>
-                        </a>
-                        <p>
-                            Explore Chinese overseas engagement and its impact with our comprehensive dataset and mapping tools, providing a nuanced understanding of Global China's past, present, and future.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4 mb-3 mb-lg-0" style="flex-grow: 1;">
-                    <div class="pt-2">
-                        <i class="fas fa-caret-right pe-2" aria-hidden="true"></i>
-                        <a href="/team">
-                            <h5 class="text-uppercase font-weight-bold">Team</h5>
-                        </a>
-                        <p>
-                            Explore Our Staff Members Who Are Driving The Mission of Center for Global China Forward.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4" style="flex-grow: 1;">
-                    <div class="pt-2">
-                        <i class="fas fa-caret-right pe-2" aria-hidden="true"></i>
-                        <a href="/experts">
-                            <h5 class="text-uppercase font-weight-bold">Experts</h5>
-                        </a>
-                        <p>
-                            Experts contributing extensive knowledge and research to promote greater understanding and dialogue on China's global relations at the Center for Global China.
-                        </p>
-                    </div>
-                </div>
+            {{#get "pages" filter="slug:~^'about-'" limit="all"}}
+                    {{#foreach pages}}
+                        <div class="col-md-12 col-lg-4 mb-3 mb-lg-0">
+                            <div class="pt-2">
+                                
+                                    <i class="fas fa-caret-right pe-2" aria-hidden="true"></i>
+                                    <a href="{{url}}">
+                                        <h5 class="text-uppercase font-weight-bold">{{title}}</h5>
+                                    </a>
+                                
+                                {{#if excerpt}}
+                                    <p>{{excerpt}}</p>                                    
+                                {{/if}}
+                            </div>
+                        </div>
+                    {{/foreach}}
+                {{/get}}
             </div>
         </div>
     </div>

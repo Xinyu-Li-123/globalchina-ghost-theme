@@ -23,7 +23,7 @@ into the {body} tag of the default.hbs template --}}
         <link rel="stylesheet" type="text/css" href="{{asset "built/author-list.css"}}" />
         <div class="author-grid">
         {{!-- A leader must has special slug: "leader-NAME" --}}
-        {{#get "authors" filter="slug:~'leader-maria'" limit="all"}}
+        {{#get "authors" filter="slug:~^'leader-maria'" limit="all"}}
         {{#foreach authors}}
             {{!-- the leader / staff card should lead to their personal websites if they upload ones to their profile --}}
             {{#if website}}
@@ -45,7 +45,7 @@ into the {body} tag of the default.hbs template --}}
             {{/if}}
         {{/foreach}}
         {{/get}}
-        {{#get "authors" filter="slug:~'leader-jiayong'" limit="all"}}
+        {{#get "authors" filter="slug:~^'leader-jiayong'" limit="all"}}
         {{#foreach authors}}
             {{!-- the leader / staff card should lead to their personal websites if they upload ones to their profile --}}
             {{#if website}}
@@ -74,7 +74,7 @@ into the {body} tag of the default.hbs template --}}
         
         <div class="author-grid">
         {{!-- A staff must has special slug: "staff-NAME" --}}
-        {{#get "authors" filter="slug:~'staff-'" limit="all"}}
+        {{#get "authors" filter="slug:~^'staff-'" limit="all"}}
         {{#foreach authors}}
             {{#if website}}
             <a href="{{website}}">
