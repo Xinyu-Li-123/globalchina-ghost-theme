@@ -1,0 +1,45 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+<style>
+    .post-footer .article-tag {
+        width: 100%;
+        gap: 3rem;
+    }
+</style>
+
+<main id="site-main" class="site-main outer tag-template">
+<div class="inner posts">
+    <div class="post-feed">
+
+        <h1 class="article-title">#Tags</h1>
+        <section class="post-card post-card-large">
+
+            <div class="post-card-content">
+            <div class="post-card-content-link">
+                <header class="post-card-header">
+                </header>
+                <div class="post-card-excerpt">
+        </section>
+    </div>
+
+    {{!-- make a grid of tags with post count --}}
+    {{#get "tags" include="count.posts" order="count.posts DESC" limit="all"}}
+        <div class="article-tag-wrap outer post-footer">
+            <div class="article-tag post-card-tags inner">
+                {{#if tags}}
+                    {{!-- iterate over tags --}}
+                    {{#foreach tags}}
+                        <span class="post-card-tag">
+                            <a href="{{url}}">{{name}}</a> ({{count.posts}})
+                            
+                        </span>
+                    {{/foreach}}
+                {{/if}}
+            </div>
+        </div>
+    {{/get}}
+
+</div>
+</main>
+

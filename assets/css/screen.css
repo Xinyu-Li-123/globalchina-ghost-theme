@@ -23,11 +23,22 @@ production stylesheet in assets/built/screen.css
 
 */
 
+
+
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
 
 /* Import CSS reset and base styles */
 @import "global.css";
+
+@font-face {
+    font-family: 'Upheaval TT (BRK)';
+    src: url('/assets/font/upheaval/UpheavalTT-BRK-.woff2') format('woff2'),
+         url('/assets/font/upheaval/UpheavalTT-BRK-.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
 
@@ -59,6 +70,7 @@ production stylesheet in assets/built/screen.css
     /* Fonts */
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     --font-serif: Georgia, Times, serif;
+    --font-upheaval: 'Upheaval TT (BRK)', serif;
     --font-mono: Menlo, Courier, monospace;
 
 }
@@ -176,8 +188,50 @@ production stylesheet in assets/built/screen.css
     text-shadow: 0.2rem 0.2rem black;
 }
 
-.has-serif-title .site-title {
+.has-sans-title .site-title,
+.has-sans-title .author-title,
+.has-sans-title .post-card-title,
+.has-sans-title .footer-cta-title,
+.has-sans-title h1,
+.has-sans-title h2,
+.has-sans-title h3,
+.has-sans-title h4,
+.has-sans-title h5,
+.has-sans-title .article-title,
+.has-sans-title .gh-content > [id],
+.has-sans-title .kg-toggle-card .kg-toggle-heading-text,
+.has-sans-title .kg-header-card h2.kg-header-card-header {
+    font-family: var(--font-sans);
+}
+.has-serif-title .site-title,
+.has-serif-title .author-title,
+.has-serif-title .post-card-title,
+.has-serif-title .footer-cta-title,
+.has-serif-title h1,
+.has-serif-title h2,
+.has-serif-title h3,
+.has-serif-title h4,
+.has-serif-title h5,
+.has-serif-title .article-title,
+.has-serif-title .gh-content > [id],
+.has-serif-title .kg-toggle-card .kg-toggle-heading-text,
+.has-serif-title .kg-header-card h2.kg-header-card-header {
     font-family: var(--font-serif);
+}
+.has-upheaval-title .site-title,
+.has-upheaval-title .author-title,
+.has-upheaval-title .post-card-title,
+.has-upheaval-title .footer-cta-title,
+.has-upheaval-title h1,
+.has-upheaval-title h2,
+.has-upheaval-title h3,
+.has-upheaval-title h4,
+.has-upheaval-title h5,
+.has-upheaval-title .article-title,
+.has-upheaval-title .gh-content > [id],
+.has-upheaval-title .kg-toggle-card .kg-toggle-heading-text,
+.has-upheaval-title .kg-header-card h2.kg-header-card-header {
+    font-family: var(--font-upheaval);
 }
 
 .has-cover .site-title {
@@ -1086,11 +1140,6 @@ production stylesheet in assets/built/screen.css
     margin-top: 0;
 }
 
-.has-serif-title .post-card-title {
-    font-family: var(--font-serif);
-    letter-spacing: -0.005em;
-}
-
 .post-card-title svg {
     margin-top: -3px;
     margin-left: -1px;
@@ -1419,10 +1468,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     color: var(--color-darkgrey);
 }
 
-.has-serif-title .article-title {
-    font-family: var(--font-serif);
-}
-
 .article-excerpt {
     margin-top: 20px;
     max-width: 720px;
@@ -1519,10 +1564,6 @@ headings, text, images and lists. We deal with cards lower down. */
 .gh-content > [id] {
     margin: 0;
     color: var(--color-darkgrey);
-}
-
-.has-serif-title .gh-content > [id] {
-    font-family: var(--font-serif);
 }
 
 /* Add back a top margin to all headings, unless a heading
@@ -1708,10 +1749,6 @@ except for when immediately preceeded by a heading */
     margin: auto;
 }
 
-.has-serif-title .kg-toggle-card .kg-toggle-heading-text {
-    font-family: var(--font-serif);
-}
-
 .gh-content .kg-callout-card-accent a {
     text-decoration: underline;
 }
@@ -1728,10 +1765,6 @@ except for when immediately preceeded by a heading */
 
 .kg-header-card.kg-style-light h2.kg-header-card-header {
     color: color-mod(var(--color-darkgrey) l(-5%));
-}
-
-.has-serif-title .kg-header-card h2.kg-header-card-header {
-    font-family: var(--font-serif);
 }
 
 
@@ -1763,6 +1796,10 @@ iframe.instagram-media + script + :not([id]) {
     margin-top: 6vmin;
 }
 
+/* make embed container as large as possible */
+.embed-container {
+    grid-column: span 5;
+}
 
 /* Card captions
 /* ---------------------------------------------------------- */
@@ -1933,10 +1970,6 @@ iframe.instagram-media + script + :not([id]) {
     /* margin: 0 0 min(24px, 6.4vmin); */
     font-size: clamp(2.6rem, 5vw, 3.8rem);
     font-weight: 800;
-}
-
-.has-serif-title .footer-cta-title {
-    font-family: var(--font-serif);
 }
 
 .footer-cta-button {
@@ -2726,7 +2759,7 @@ html.dark-mode .footer-cta-title {
         color: #fff;
     }
 
-    html.auto-color .footer-cta-title {
+html.auto-color .footer-cta-title {
         color: #fff;
     }
 }
@@ -2742,7 +2775,11 @@ html.dark-mode .footer-cta-title {
   }
   
 .viewport.has-serif-body {
-font-family: var(--font-serif);
+    font-family: var(--font-serif);
+}
+
+.viewport.has-upheaval-body {
+    font-family: var(--font-upheaval);
 }
 
 /* Title */

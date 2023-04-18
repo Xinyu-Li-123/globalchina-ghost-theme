@@ -98,13 +98,47 @@
                 ],
                 "default": "Logo on cover"
             },
-            "font_family": {
+            "title_font_family": {
                 "type": "select",
                 "options": [
                     "Modern sans-serif",
-                    "Elegant serif"
+                    "Elegant serif",
+                    "Upheaval serif"      
                 ],
                 "default": "Elegant serif"
+            },
+            "body_font_family": {
+                "type": "select",
+                "options": [
+                    "Modern sans-serif",
+                    "Elegant serif",
+                    "Upheaval serif"
+                ],
+                "default": "Elegant serif"
+            },
+            "facebook_url": {
+                "type": "text",
+                "default": "https://www.facebook.com/profile.php?id=100086032845630"
+            },
+            "twitter_url": {
+                "type": "text",
+                "default": "https://twitter.com/MapGlobalChina"
+            },
+            "instagram_url": {
+                "type": "text",
+                "default": "https://www.instagram.com/mapglobalchina/"
+            },
+            "linkedin_url": {
+                "type": "text",
+                "default": "https://www.linkedin.com/company/mapping-global-china/"
+            },
+            "youtube_url": {
+                "type": "text",
+                "default": "https://www.youtube.com/channel/UCBwTXO9QEEPKtYgPOvbPnUg"
+            },
+            "tiktok_url": {
+                "type": "text",
+                "default": "https://www.tiktok.com/@mapglobalchina"
             },
             "show_publication_cover": {
                 "type": "boolean",
@@ -168,3 +202,4 @@
         ]
     }
 }
+

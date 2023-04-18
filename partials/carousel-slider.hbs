@@ -12,7 +12,6 @@
   <!-- Inner -->
   <div class="carousel-inner">
 
-    {{#get "posts" filter="featured:true,featured:false" limit="5"}}
       {{#foreach posts}}
         <div class="carousel-item">
           {{#if feature_image}}
@@ -44,7 +43,6 @@
           </a>
         </div>      
       {{/foreach}}
-    {{/get}}  
   </div>
   <!-- Inner -->
 

@@ -46,11 +46,24 @@
 </head>
 <body class="{{body_class}} is-head-{{#match @custom.navigation_layout "Logo on cover"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}">
 <div class="viewport 
-{{#match @custom.font_family "=" "Modern sans-serif"}} 
+{{#match @custom.title_font_family "=" "Modern sans-serif"}} 
+    has-sans-title
+{{else match @custom.title_font_family "=" "Elegant serif"}}
+    has-serif-title
+{{else match @custom.title_font_family "=" "Upheaval serif"}}
+    has-upheaval-title
+{{/match}}
+
+{{#match @custom.body_font_family "=" "Modern sans-serif"}} 
     has-sans-body
-{{else match @custom.font_family "=" "Elegant serif"}}
+{{else match @custom.body_font_family "=" "Elegant serif"}}
     has-serif-body
-{{/match}}">
+{{else match @custom.body_font_family "=" "Upheaval serif"}}
+    has-upheaval-body
+{{/match}}
+
+">
+
     {{> todolist}}
     <header id="gh-head" class="gh-head outer">
         <div class="gh-head-inner inner">

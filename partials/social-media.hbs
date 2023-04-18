@@ -1,8 +1,25 @@
+<style>
+    .social-media {
+        font-family: sans-serif;
+    }
+</style>
 <div class="social-media">
-    <a class="social-media-link" href="#"><i class="fab fa-facebook-f"></i></a>
-    <a class="social-media-link" href="#"><i class="fab fa-twitter"></i></a>
-    <a class="social-media-link" href="#"><i class="fab fa-instagram"></i></a>
-    <a class="social-media-link"href="#"><i class="fab fa-linkedin-in"></i></a>
-    <a class="social-media-link"href="#"><i class="fab fa-tiktok"></i></a>
-    <a class="social-media-link"href="#"><i class="fab fa-youtube"></i></a>
+    {{#if @custom.facebook_url}}
+        <a class="social-media-link" href="{{@custom.facebook_url}}"><i class="fab fa-facebook-f"></i></a>
+    {{/if}}
+    {{#if @custom.twitter_url}}
+        <a class="social-media-link" href="{{@custom.twitter_url}}"><i class="fab fa-twitter"></i></a>
+    {{/if}}
+    {{#if @custom.instagram_url}}
+        <a class="social-media-link" href="{{@custom.instagram_url}}"><i class="fab fa-instagram"></i></a>
+    {{/if}}
+    {{#if @custom.linkedin_url}}
+        <a class="social-media-link" href="{{@custom.linkedin_url}}"><i class="fab fa-linkedin-in"></i></a>
+    {{/if}}
+    {{#if @custom.youtube_url}}
+        <a class="social-media-link" href="{{@custom.youtube_url}}"><i class="fab fa-youtube"></i></a>
+    {{/if}}
+    {{#if @custom.tiktok_url}}
+        <a class="social-media-link" href="{{@custom.tiktok_url}}"><i class="fab fa-tiktok"></i></a>
+    {{/if}}
 </div>

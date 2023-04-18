@@ -78,7 +78,7 @@ This script
             <img
                 class="article-image-banner"
                 sizes="(min-width: 1400px) 1400px"
-                src="/content/images/size/w2000/2023/04/dummy-hero-image-1.jpg"
+                src={{asset "image/dummy_hero_image.webp"}}
             />
             {{/if}}
         </div>  
@@ -94,9 +94,6 @@ This script
     // place header s.t. its bottom is 10px above the bottom of the image
     window.onresize = function() {
         $(".article-header").css("top", $(".image-container").height() + $(".gh-head.outer").height() - $(".article-header").height() - 10 + "px");
-        if ($(".article-image-banner").height() < 250) {
-            $(".article-image-banner").css("height", "250px");
-        }
     }
     window.onresize();
 

@@ -2,11 +2,13 @@ Current:
 
 [ ] Fill in megamenu content
     [x] About
-    [ ] Maps
+    [x] Maps
     [ ] Research
     [ ] Events
 
 [v] Add pagination
+
+[ ] Add maps page
 
 [ ] Add social media link
 
@@ -25,3 +27,5 @@ Current:
 Future: 
 
 [ ] Add author social media metadata as icons
+
+[ ] Fix bug: resize down then up, there will be a gap between gh-head and megamenu-dropdown

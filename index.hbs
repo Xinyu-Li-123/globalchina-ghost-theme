@@ -38,7 +38,7 @@ into the {body} of the default.hbs template --}}
 
     {{#match @custom.header_style "!=" "Hidden"}}
         <div class="site-header-inner inner">
-            <h1 class="site-title">{{@site.title}}</h1>
+            <h1 class="site-title">{{@site.title}}</h2>
             {{#if @site.description}}
                 <p class="site-description">{{@site.description}}</p>
             {{/if}}
@@ -51,7 +51,9 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer no-infinite-scroll">
 <div class="inner posts">
 
-    {{> "carousel-slider"}}
+     {{#get "posts" filter="featured:true,featured:false" limit="5"}}
+        {{> "carousel-slider"}}
+    {{/get}}
 
     {{> "homepage-post-feed"}}
 
