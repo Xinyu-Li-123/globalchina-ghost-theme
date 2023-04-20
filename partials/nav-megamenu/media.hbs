@@ -1,10 +1,19 @@
 <li class="nav-item dropdown">
-    <a class="nav-link animated-underscore" href="#">About</a>
+    <a class="nav-link" href="#">Media</a>
     <!-- Dropdown menu -->
-    <div class="dropdown-menu mt-0" aria-labelledby="navbarDropdown" style="position: absolute; inset: 0px auto auto 0px;;" data-popper-placement="bottom-start" data-mdb-popper="null">
+    <div class="dropdown-menu mt-0" aria-labelledby="navbarDropdown" style="border-top-left-radius: 0px; border-top-right-radius: 0px; position: absolute; inset: 0px auto auto 0px;;" data-popper-placement="bottom-start" data-mdb-popper="null">
         <div class="dropdown-container">
+            <div class="row my-3">
+                <div class="col-md-12 col-xl-6 mb-3 mb-xl-0">
+                    <div class="pt-2">
+                        <i class="fas fa-caret-right pe-2" aria-hidden="true"></i>
+                        <a href="/media">
+                            <h1>Media</h1>
+                        </a>
+                    </div>
+                </div>
             <div class="row my-3 d-flex">
-            {{#get "pages" filter="slug:~^'about-'" limit="all"}}
+            {{#get "pages" filter="slug:~^'media-'" limit="all"}}
                     {{#foreach pages}}
                         <div class="col-md-12 col-lg-4 mb-5 mb-lg-0">
                             <div class="pt-2">
@@ -24,3 +33,4 @@
         </div>
     </div>
 </li>
+

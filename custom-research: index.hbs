@@ -17,14 +17,15 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
 
    </section>
-    {{#get "posts" filter="featured:true,featured:false" limit="5"}}
+   {{!-- fetch research post --}}
+    {{#get "posts" filter="slug:~^'research-'" limit="5"}}
         {{> "carousel-slider"}}
     {{/get}}
 
-        {{#get "posts" filter="slug:~^'research-'"  limit="all" include="tags,authors"}}
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-            {{> "homepage-post-feed"}}
-        {{/get}}
+    {{#get "posts" filter="slug:~^'research-'"  limit="all" include="tags,authors"}}
+        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+        {{> "homepage-post-feed"}}
+    {{/get}}
  
 </article>
 </main>

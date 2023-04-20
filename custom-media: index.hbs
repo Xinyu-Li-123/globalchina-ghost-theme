@@ -17,14 +17,20 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
 
    </section>
-    {{#get "posts" filter="featured:true,featured:false" limit="5"}}
+   {{!-- fetch event posts --}}
+    {{#get "posts" filter="slug:~^'event-'" limit="5"}}
         {{> "carousel-slider"}}
     {{/get}}
 
+    {{!-- events --}}
     {{#get "posts" filter="slug:~^'event-'"  limit="all" include="tags,authors"}}
         {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
         {{> "homepage-post-feed"}}
     {{/get}}
+
+    {{!-- videos --}}
+
+    {{!-- news --}}
  
 </article>
 </main>

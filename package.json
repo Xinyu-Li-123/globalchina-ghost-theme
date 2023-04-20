@@ -103,7 +103,8 @@
                 "options": [
                     "Modern sans-serif",
                     "Elegant serif",
-                    "Upheaval serif"      
+                    "Upheaval serif",
+                    "Romana BT"      
                 ],
                 "default": "Elegant serif"
             },
@@ -112,7 +113,9 @@
                 "options": [
                     "Modern sans-serif",
                     "Elegant serif",
-                    "Upheaval serif"
+                    "Upheaval serif",
+                    "Romana BT",
+                    "Roboto"
                 ],
                 "default": "Elegant serif"
             },

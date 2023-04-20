@@ -4,16 +4,19 @@
     <div class="dropdown-menu mt-0" aria-labelledby="navbarDropdown" style="border-top-left-radius: 0px; border-top-right-radius: 0px; position: absolute; inset: 0px auto auto 0px;;" data-popper-placement="bottom-start" data-mdb-popper="null">
         <div class="dropdown-container">
             <div class="row my-3">
-                <div class="col-md-6 col-xl-3 mb-3 mb-xl-0">
+                <div class="col-md-12 col-xl-6 mb-3 mb-xl-0">
                     <div class="pt-2">
                         <i class="fas fa-caret-right pe-2" aria-hidden="true"></i>
                         <a href="/research">
                             <h1>Research Briefs</h1>
                         </a>
+                        {{#get "pages" filter="slug:research" limit="1"}}
+                            {{#foreach pages}}
+                                <p>{{excerpt}}</p>
+                            {{/foreach}}
+                        {{/get}}
                     </div>
                 </div>
-            </div>
-            <div class="row my-3">
                 <div class="col-md-6 col-xl-3">
                     <div class="list-group list-group-flush">
                     <h3 class="mb-0 list-group-item text-uppercase font-weight-bold">
@@ -47,8 +50,8 @@
                         <i class="fa-solid fa-scale-unbalanced-flip"></i></a>
                     </div>
                 </div>
-            </div>
  
+           </div> 
         </div>
     </div>
 </li>
