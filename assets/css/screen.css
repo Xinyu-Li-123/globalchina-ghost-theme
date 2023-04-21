@@ -105,14 +105,14 @@ production stylesheet in assets/built/screen.css
 
         put top view 
 
-        pdf load wrong on resize
+        v pdf load wrong on resize
 
-        pdf  bar color:
+        v pdf bar color:
             bg-color: theme-blue
             text-color: theme-white
         
         make map full screen 
-        delete map left-right padding
+        v delete map left-right padding
         change content top padding smaller
         delete map banner
         delete every padding around the map
@@ -1946,6 +1946,11 @@ iframe.instagram-media + script + :not([id]) {
 
 .kg-width-full.kg-card-hascaption figcaption {
     grid-column: main-start / main-end;
+}
+
+.kg-toggle-card {
+    background-color: var(--color-theme-blue) !important;
+    color: var(--color-theme-white) !important;
 }
 
 .article-comments {

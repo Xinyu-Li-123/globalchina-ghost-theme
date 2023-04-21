@@ -1,39 +1,50 @@
 {{!< default}}
 
+{{!-- The tag above means: insert everything in this file
+into the {body} tag of the default.hbs template --}}
+
+
 {{#post}}
+{{!-- Everything inside the #post block pulls data from the post --}}
+
+<style>
+    .read-more-button {
+        border: 1px solid #000;
+    }
+</style>
 
 <main id="site-main" class="site-main">
 
-<article class="article {{post_class}}">
+{{> feature-image-to-banner}}
 
-    <header class="article-header gh-canvas">
-
-        <h1 class="article-title">{{title}}</h1>
-
-        {{#if feature_image}}
-            <figure class="article-image">
-                {{!-- This is a responsive image, it loads different sizes depending on device
-                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-                <img
-                    srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
-                    sizes="(min-width: 1400px) 1400px, 92vw"
-                    src="{{img_url feature_image size="xl"}}"
-                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                />
-                {{#if feature_image_caption}}
-                    <figcaption>{{feature_image_caption}}</figcaption>
-                {{/if}}
-            </figure>
-        {{/if}}
-
-    </header>
+<article class="article {{post_class}} {{#match @custom.post_image_style "Full"}}image-full{{else match @custom.post_image_style "=" "Small"}}image-small{{/match}}">
 
     <section class="gh-content gh-canvas">
         {{content}}
+
+        {{#get "posts" filter="slug:~^'event-'" limit="all"}}
+            {{#foreach posts}}
+                <div class="row gx-5 gy-5">
+                    <div class="col-12 col-md-6">
+                        {{#if feature_image}}
+                            <img src="{{feature_image}}" alt="{{title}}">
+                        {{else}}
+                            <img src="https://via.placeholder.com/150" alt="{{title}}">
+                        {{/if}}                        
+                    </div>
+                    <div class="col-12 col-md-6 post-card-excerpt d-flex flex-column justify-content-center">
+                        <h2>{{title}}</h2>
+                        <p>{{date}}</p>
+                        {{!-- short exceprt (a few words) with a read-more button --}}
+                        {{excerpt words="20" suffix="..."}}...
+                        <a class="read-more-button" href="{{url}}">Read more</a>
+                    </div>
+                </div>
+                <hr>
+            {{/foreach}}
+        {{/get}}
     </section>
+
 
 </article>
 </main>
