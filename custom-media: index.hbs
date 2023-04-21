@@ -3,35 +3,123 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} tag of the default.hbs template --}}
 
-
 {{#post}}
 {{!-- Everything inside the #post block pulls data from the post --}}
 
-
 <main id="site-main" class="site-main">
-
 {{> feature-image-to-banner}}
 
-<article class="article {{post_class}} {{#match @custom.post_image_style "Full"}}image-full{{else match @custom.post_image_style "=" "Small"}}image-small{{/match}}">
-    <section class="gh-content gh-canvas">
-        {{content}}
+  <div class="container my-5">
+    <h1 class="text-center">Media</h1>
+php
+Copy code
+<ul class="nav nav-tabs justify-content-center" id="media-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="maps-tab" data-bs-toggle="tab" data-bs-target="#maps" type="button" role="tab" aria-controls="maps" aria-selected="true"><i class="fas fa-map"></i> Maps</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="conversation-tab" data-bs-toggle="tab" data-bs-target="#conversation" type="button" role="tab" aria-controls="conversation" aria-selected="false"><i class="fas fa-comments"></i> Conversation</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="news-tab" data-bs-toggle="tab" data-bs-target="#news" type="button" role="tab" aria-controls="news" aria-selected="false"><i class="fas fa-newspaper"></i> News</button>
+  </li>
+</ul>
 
-   </section>
-   {{!-- fetch event posts --}}
-    {{#get "posts" filter="slug:~^'event-'" limit="5"}}
-        {{> "carousel-slider"}}
-    {{/get}}
-
-    {{!-- events --}}
-    {{#get "posts" filter="slug:~^'event-'"  limit="all" include="tags,authors"}}
-        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-        {{> "homepage-post-feed"}}
-    {{/get}}
-
-    {{!-- videos --}}
-
-    {{!-- news --}}
- 
-</article>
+<div class="tab-content mt-4" id="media-tabs-content">
+  <div class="tab-pane fade show active" id="maps" role="tabpanel" aria-labelledby="maps-tab">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="map1.jpg" class="card-img-top" alt="Map 1">
+          <div class="card-body">
+            <h5 class="card-title">Map 1</h5>
+            <p class="card-text">Description of Map 1.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="map2.jpg" class="card-img-top" alt="Map 2">
+          <div class="card-body">
+            <h5 class="card-title">Map 2</h5>
+            <p class="card-text">Description of Map 2.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="map3.jpg" class="card-img-top" alt="Map 3">
+          <div class="card-body">
+            <h5 class="card-title">Map 3</h5>
+            <p class="card-text">Description of Map 3.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="conversation" role="tabpanel" aria-labelledby="conversation-tab">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="conversation1.jpg" class="card-img-top" alt="Conversation 1">
+          <div class="card-body">
+            <h5 class="card-title">Conversation 1</h5>
+            <p class="card-text">Description of Conversation 1.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="conversation2.jpg" class="card-img-top" alt="Conversation 2">
+          <div class="card-body">
+            <h5 class="card-title">Conversation 2</h5>
+            <p class="card-text">Description of Conversation 2.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="conversation3.jpg" class="card-img-top" alt="Conversation 3">
+          <div class="card-body">
+            <h5 class="card-title">Conversation 3</h5>
+            <p class="card-text">Description of Conversation 3.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="news" role="tabpanel" aria-labelledby="news-tab">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="news1.jpg" class="card-img-top" alt="News 1">
+          <div class="card-body">
+            <h5 class="card-title">News 1</h5>
+            <p class="card-text">Description of News 1.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="news2.jpg" class="card-img-top" alt="News 2">
+          <div class="card-body">
+            <h5 class="card-title">News 2</h5>
+            <p class="card-text">Description of News 2.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="news3.jpg" class="card-img-top" alt="News 3">
+          <div class="card-body">
+            <h5 class="card-title">News 3</h5>
+            <p class="card-text">Description of News 3.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
 </main>
 {{/post}}

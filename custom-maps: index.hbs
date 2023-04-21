@@ -2,7 +2,13 @@
 
 {{!-- The tag above means: insert everything in this file
 into the {body} tag of the default.hbs template --}}
+<style>
+    .index-image:hover {
+        opacity: 0.5;
+        transition: 0.3s;
+    }
 
+</style>
 
 {{#post}}
 {{!-- Everything inside the #post block pulls data from the post --}}
@@ -18,12 +24,32 @@ into the {body} tag of the default.hbs template --}}
 {{/post}}
 
     </section>
-    {{#get "pages" filter="slug:~^'maps-'"  limit="all" }}
-        {{#foreach pages}}
-            <h1 class="post-card-title">{{title}}</h1>
-        {{/foreach}}
-    {{/get}}
 
+    <div class="row md-5"> 
+        {{#get "pages" filter="slug:~^'maps-'"  limit="all" }}
+        {{#foreach pages}}
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-12 mb-lg-0">
+                {{!-- clickable feature image with title overlayed on it --}}
+                <a href="{{url}}" class="d-block">
+                <div class="position-relative">
+                    <img src="
+                    {{#if feature_image}}
+                        {{feature_image}}
+                    {{else}}
+                        {{asset 'image/dummy_image.jpg'}}
+                    {{/if}}
+                    "
+                     class="index-image img-fluid rounded" alt="{{title}}">
+                    <div class="overlay position-absolute top-0 start-0 d-flex flex-column justify-content-center">
+                    <h3 class="text-white mb-0">{{title}}</h3>
+                    </div>
+                </div>
+                </a>
+            </div>
+        {{/foreach}}
+        {{/get}}
+
+    </div>
 
 </article>
 </main>
