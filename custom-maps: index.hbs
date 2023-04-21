@@ -8,25 +8,29 @@ into the {body} tag of the default.hbs template --}}
         transition: transform 0.3s ease-out;
         position: relative;
     }
-    .index-image-card:hover {
+    .index-image-card:hover img {
         filter: brightness(0.5);
-        font-size: 3rem;
+        transition: 0.15s ease-out;
     }
     .index-image-card:hover::before {
         opacity: 1;
     }
-    .index-image-card::after {
-        content: attr(data-title);
+    .index-image-card h1 {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: #fff;
         font-weight: bold;
         text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+        opacity: 0.8;
+        transition: 0.3s ease-out;
+    }
+    .index-image-card:hover h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px var(--color-theme-blue);
         opacity: 1;
-        transition: opacity 0.3s ease-out;
     }
 
 </style>
@@ -42,7 +46,7 @@ into the {body} tag of the default.hbs template --}}
 <div class="row mt-5 gx-5 gy-5"> 
     {{#get "pages" filter="slug:~^'maps-'"  limit="all" }}
     {{#foreach pages}}
-        <div class="index-image-card col-sm-12 col-md-6 col-lg-6 mb-6 mb-lg-0" data-title="{{title}}">
+        <div class="index-image-card col-sm-12 col-md-6 col-lg-6 mb-6 mb-lg-0">
             {{!-- clickable feature image with title overlayed on it --}}
             <a href="{{url}}" class="d-block">
             <div class="position-relative">
@@ -54,6 +58,7 @@ into the {body} tag of the default.hbs template --}}
                 {{/if}}
                 "
                  class="index-image rounded" alt="{{title}}">
+                 <h1 class="text-white index-title">{{title}}</h1>
             </div>
             </a>
         </div>
