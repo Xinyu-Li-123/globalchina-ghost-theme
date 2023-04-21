@@ -1,64 +1,88 @@
 {{!< default}}
 
 
+
 {{#post}}
 
 <main id="site-main" class="site-main">
 
-{{> feature-image-to-banner}}
-
 <style>
-    /*
-    .article {
-        padding: 0px !important ;
-        margin: 0px !important ;
-    }
-    .article-image {
-        color: var(--color-theme-white);
-        margin: 0;
-    }
-    .article-image .image-container {
-        position: relative;
-        height: 250px;
-        overflow: hidden;
-    }
+.article-image {
+    color: white;
+}
+.article-image .image-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+.article-image .image-container img {
+    display: block;
+    width: 100%;
+    min-height: 250px;
+}
+.article-image .image-container:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-theme-lightblue) !important;
+    z-index: 1;
+}
+.gh-head {
+    background-color: var(--color-theme-blue) !important;
+}
+.article-image header {
+    position: absolute;
+    top: 260px;
+    z-index: 2;
+    width: 100%;
+}
+.article-image header h1 {
+    color: white;
+}
+
+.page-with-banner .article {
+    padding: 40px;
+}
+
+
+@media (max-width: 800px) {
     .article-image .image-container img {
-        display: block;
-        width: 100%;
-        min-height: 250px;
-    }
-    .article-image .image-container:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(10, 49, 125, 0.5));
-        z-index: 1;
+        height: 150px;
     }
     .article-image header {
-        position: absolute;
-        top: 260px;
-        z-index: 2;
-        width: 100%;
+        top: 150px;
     }
-    .article-image header h1 {
-        color: white;
+    .page-with-banner .article {
+        padding: 20px;
     }
+}
+</style>
 
-    .embed-container {
-        margin: 0;
-    }
 
-    .article-title {
-        text-align: center;
+    <figure class="article-image">
+        <div class="image-container">
+        </div>  
+
+        <header class="article-header gh-canvas outer">
+            <h1 class="article-title inner">{{title}}</h1>
+        </header>
+    </figure>
+
+
+<script type="text/javascript">
+    document.getElementById("site-main").classList.add("page-with-banner");
+    // place header s.t. its bottom is 10px above the bottom of the image
+    window.onresize = function() {
+        $(".article-header").css("top", $(".image-container").height() + 
+            $(".gh-head.outer").height() - $(".article-header").height() - 30 + "px");
     }
-    
-    .site-footer {
-        border: none;
-    }
-    */
+    window.onresize();    
+</script>
+
+<style>
     .article {
         padding: 0px !important ;
     }
@@ -97,3 +121,5 @@
 </main>
 
 {{/post}}
+
+

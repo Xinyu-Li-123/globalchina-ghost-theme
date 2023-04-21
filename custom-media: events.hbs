@@ -3,15 +3,48 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} tag of the default.hbs template --}}
 
+<style>
+    .read-more-button {
+        border: 2px solid #000;
+        background-color: white !important;
+        color: black !important;
+        text-decoration: none !important;
+        width: fit-content;
+        padding: 0.75rem 1rem;
+        font-weight: bold;
+        transition: background-color 0.2s ease-out, color 0.2s ease-out;
+    }
+
+    .read-more-button:hover {
+        background-color: black !important;
+        color: white !important;
+    }
+
+    .event-card a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .event-card a:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+    .event-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .event-card img:hover {
+        opacity: 0.8;
+        transform: scale(1.1);
+        transition: all 0.2s ease-out;
+    }
+
+</style>
 
 {{#post}}
 {{!-- Everything inside the #post block pulls data from the post --}}
-
-<style>
-    .read-more-button {
-        border: 1px solid #000;
-    }
-</style>
 
 <main id="site-main" class="site-main">
 
@@ -24,20 +57,27 @@ into the {body} tag of the default.hbs template --}}
 
         {{#get "posts" filter="slug:~^'event-'" limit="all"}}
             {{#foreach posts}}
-                <div class="row gx-5 gy-5">
-                    <div class="col-12 col-md-6">
+                <div class="event-card post-card row gx-5 gy-5">
+                    <div class="col-8 col-md-6">
+                        <a href="{{url}}">
+                        <div style="overflow: hidden">
                         {{#if feature_image}}
                             <img src="{{feature_image}}" alt="{{title}}">
                         {{else}}
-                            <img src="https://via.placeholder.com/150" alt="{{title}}">
-                        {{/if}}                        
+                            <img src="{{asset 'image/dummy_image.jpg' }}" alt="{{title}}">
+                        {{/if}}  
+                        </div>         
+                        </a>             
                     </div>
+                    
                     <div class="col-12 col-md-6 post-card-excerpt d-flex flex-column justify-content-center">
-                        <h2>{{title}}</h2>
-                        <p>{{date}}</p>
-                        {{!-- short exceprt (a few words) with a read-more button --}}
-                        {{excerpt words="20" suffix="..."}}...
-                        <a class="read-more-button" href="{{url}}">Read more</a>
+                        <a href="{{url}}">
+                            <h2>{{title}}</h2>
+                            <p>{{date}}</p>
+                            {{!-- short exceprt (a few words) with a read-more button --}}
+                            {{excerpt words="20"}}...
+                            <a class="read-more-button mt-3" href="{{url}}">Read more</a>
+                        </a>
                     </div>
                 </div>
                 <hr>
@@ -50,3 +90,13 @@ into the {body} tag of the default.hbs template --}}
 </main>
 
 {{/post}}
+
+<script>
+    // flip odd number cards (left: img, right: text => right: img, left: text)
+    const eventCards = document.querySelectorAll('.event-card');
+    eventCards.forEach((card, index) => {
+        if (index % 2 === 1) {
+            card.classList.add('flex-md-row-reverse');
+        }
+    });
+</script>

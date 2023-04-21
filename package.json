@@ -89,6 +89,16 @@
         },
         "card_assets": true,
         "custom": {
+            "title_style": {
+                "type": "select",
+                "options": [
+                    "None",
+                    "Compact",
+                    "Extended",
+                    "Graphic"
+                ],
+                "default": "None"
+            },
             "navigation_layout": {
                 "type": "select",
                 "options": [

@@ -21,28 +21,73 @@ into the {body} of the default.hbs template --}}
         {{/if}}
     {{/if}}
 
-    {{!-- always put title in middle, and logo in top left --}}
     {{!-- {{#match @custom.header_style "!=" "Hidden"}}
         <div class="site-header-inner inner">
-            {{#match @custom.navigation_layout "Logo on cover"}}
+            {{#match @custom.navigation_layout "Logo in the middle"}}
                 {{#if @site.logo}}
                     <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
                 {{else}}
                     <h1 class="site-title">{{@site.title}}</h1>
                 {{/if}}
+            {{else match @custom.navigation_layout "=" "Graphic"}}
+                <div class="d-flex">
+                    <h1 class="site-title">{{@site.title}}</h1>
+                    <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
+                </div>
             {{/match}}
-            {{#if @site.description}}
-                <p class="site-description">{{@site.description}}</p>
-            {{/if}}
         </div>
     {{/match}} --}}
 
     {{#match @custom.header_style "!=" "Hidden"}}
         <div class="site-header-inner inner">
-            <h1 class="site-title">{{@site.title}}</h2>
-            {{#if @site.description}}
-                <p class="site-description">{{@site.description}}</p>
-            {{/if}}
+            
+            {{#match @custom.title_style "=" "None"}}
+                <h1 class="site-title">{{@site.title}}</h1>
+                {{#if @site.description}}
+                    <p class="site-description">{{@site.description}}</p>
+                {{/if}}
+            {{else}}
+            <style>
+                .site-logo {
+                    transform: translate(4rem, 1rem);
+                    scale: 1.5;
+                }
+                .site-description {
+                    margin-right: 2.4rem;
+                }
+
+                .site-logo-wrapper {
+                    width: fit-content;
+                    position: absolute;
+                    right: 100px;
+                    top: -7rem;
+                }
+
+                @media (max-width: 800px) {
+                    .site-logo-wrapper {
+                        width: 100%;
+                        position: absolute;
+                        right: 0px;
+                        top: -7rem;
+                    }
+                    .site-logo {
+                        transform: translate(4rem, 2rem);
+                        scale: 1;
+                    }
+                    .site-description {
+                        font-size: 1.8rem !important;
+                    }
+                }
+            </style>
+                <div class="site-logo-wrapper">
+                    <img class="site-logo" src="{{asset 'design/logo_graphic_white.png'}}" alt="{{@site.title}}">
+                    {{#if @site.description}}
+                        <p class="site-description">{{@site.description}}</p>
+                    {{/if}}
+                </div>  
+            {{/match}}
+
+
         </div>
     {{/match}}
 
