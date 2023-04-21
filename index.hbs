@@ -48,11 +48,11 @@ into the {body} of the default.hbs template --}}
                 {{/if}}
             {{else}}
             <style>
-                .site-logo {
-                    transform: translate(4rem, 1rem);
+                .site-logo-wrapper .site-logo {
+                    transform: translate(8rem, -1rem);
                     scale: 1.5;
                 }
-                .site-description {
+                .site-logo-wrapper .site-description {
                     margin-right: 2.4rem;
                 }
 
@@ -70,11 +70,11 @@ into the {body} of the default.hbs template --}}
                         right: 0px;
                         top: -7rem;
                     }
-                    .site-logo {
-                        transform: translate(4rem, 2rem);
+                    .site-logo-wrapper .site-logo {
+                        transform: translate(1rem, 1rem);
                         scale: 1;
                     }
-                    .site-description {
+                    .site-logo-wrapper .site-description {
                         font-size: 1.8rem !important;
                     }
                 }
