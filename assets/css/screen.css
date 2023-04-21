@@ -94,10 +94,10 @@ production stylesheet in assets/built/screen.css
     --color-theme-orange: rgba(227, 161, 82, 1);
     /* 
         TODO:
-        blue: document navigation
+        v blue: document navigation
         v orange: nav button
         x        floating subscribe button
-        white: background
+        v white: background
 
         logo:
             use extended, right aligned, (the one with overlay)
@@ -152,6 +152,7 @@ production stylesheet in assets/built/screen.css
 .site-content {
     flex-grow: 1;
     z-index: 4;
+    background-color: var(--color-theme-white);
 }
 
 /* Full width page blocks */
@@ -173,7 +174,7 @@ production stylesheet in assets/built/screen.css
 
 .site-header {
     position: relative;
-    color: #fff;
+    color: var(--color-theme-white);
     background: var(--ghost-accent-color);
 }
 
@@ -216,7 +217,7 @@ production stylesheet in assets/built/screen.css
 .has-cover .site-header-content {
     min-height: 560px;
     background-color: var(--ghost-accent-color);
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 .site-header-content.left-aligned {
@@ -401,7 +402,7 @@ production stylesheet in assets/built/screen.css
 
 .has-cover .site-description {
     letter-spacing: -0.005em;
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 .has-cover :is(.site-logo, .site-title) + .site-description {
@@ -458,7 +459,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .home-template .site-main {
-  background-color: white;
+  background-color: var(--color-theme-white);
   padding-top: 4rem;
   position: relative;
   z-index: 2;
@@ -476,13 +477,13 @@ production stylesheet in assets/built/screen.css
     height: 88px;
     font-size: 1.6rem;
     line-height: 1.3em;
-    background-color: #fff;
+    background-color: var(--color-theme-white);
     z-index: 6;     /* gh-head > site-footer > site-content */
 }
 
 .has-cover:not(.home-template) .gh-head {
     background-color: var(--ghost-accent-color);
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 :is(.home-template, .paged:not(.tag-template):not(.author-template)).has-cover .gh-head {
@@ -491,7 +492,7 @@ production stylesheet in assets/built/screen.css
     right: 0;
     left: 0;
     background-color: transparent;
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 .gh-head a {
@@ -627,7 +628,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .has-cover .gh-head-logo {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 
@@ -722,7 +723,7 @@ production stylesheet in assets/built/screen.css
     opacity: 0;
     visibility: hidden;
     text-align: left;
-    background-color: #fff;
+    background-color: var(--color-theme-white);
     border-radius: 5px;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 7px 20px -5px rgba(0, 0, 0, 0.15);
     transform: translate3d(0, 6px, 0);
@@ -813,13 +814,13 @@ production stylesheet in assets/built/screen.css
     letter-spacing: -0.005em;
     font-size: 1.6rem;
     border-radius: 48px;
-    color: #fff;
+    color: var(--color-theme-white);
     background: var(--ghost-accent-color);
 }
 
 .has-cover .gh-head-button {
     color: var(--color-darkgrey);
-    background: #fff;
+    background: var(--color-theme-white);
 }
 
 @media (max-width: 800px) {
@@ -901,7 +902,7 @@ production stylesheet in assets/built/screen.css
 
 .has-cover .gh-burger::before,
 .has-cover .gh-burger::after {
-    background-color: #fff;
+    background-color: var(--color-theme-white);
 }
 
 .gh-burger::before {
@@ -1044,7 +1045,7 @@ production stylesheet in assets/built/screen.css
         gap: 12px;
         align-items: center;
         padding: max(4vmin, 20px) 0 max(4vmin, 28px);
-        background-color: #fff;
+        background-color: var(--color-theme-white);
     }
 
     .gh-head-open #gh-head :is(.gh-head-button, .gh-head-link) {
@@ -1209,7 +1210,7 @@ production stylesheet in assets/built/screen.css
     gap: 4px;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 .post-card-content-link {
@@ -1487,7 +1488,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .pagination li a:hover {
   background-color: var(--ghost-accent-color);
-  color: white;
+  color: var(--color-theme-white);
 }
 
 .pagination li.current-page {
@@ -2065,7 +2066,7 @@ iframe.instagram-media + script + :not([id]) {
     margin: 0 -4px;
     width: min(56px, 13.6vmin);
     height: min(56px, 13.6vmin);
-    border: #fff 2px solid;
+    border: var(--color-theme-white) 2px solid;
     border-radius: 50%;
     background-color: var(--color-border);
 }
@@ -2109,7 +2110,7 @@ iframe.instagram-media + script + :not([id]) {
     padding: 5px 5px 5px 15px;
     font-size: 1.7rem;
     color: var(--color-secondary-text);
-    background: #fff;
+    background: var(--color-theme-white);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     transition: border-color 0.2s;
@@ -2118,7 +2119,7 @@ iframe.instagram-media + script + :not([id]) {
 .footer-cta-button:hover span {
     border-color: color-mod(var(--color-border) l(-12%));
     color: blue;
-    background-color: white;
+    background-color: var(--color-theme-white);
     transition: background-color 0.2s, color 0.2s; 
 }
 
@@ -2126,7 +2127,7 @@ iframe.instagram-media + script + :not([id]) {
     display: inline-block;
     padding: 9px 15px;
     background-color: var(--ghost-accent-color);
-    color: white;
+    color: var(--color-theme-white);
     transition: background-color 0.2s, color 0.2s;
     font-size: 1.6rem;
     font-weight: 600;
@@ -2381,9 +2382,9 @@ iframe.instagram-media + script + :not([id]) {
     /* margin: max(12vmin, 64px) 0 0 0; */
     padding-top: 48px;
     padding-bottom: 140px;
-    color: #fff;
+    color: var(--color-theme-white);
     background: color-mod(var(--color-darkgrey) l(-5%));
-    border: white solid;
+    border: var(--color-theme-white) solid;
     border-width: max(12vmin,64px) 0 0;
     z-index: 5;
 }
@@ -2433,14 +2434,14 @@ iframe.instagram-media + script + :not([id]) {
     margin: 0 0 8px;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 .site-footer p {
     margin: 0 0 8px;
     font-size: 1.6rem;
     font-weight: 500;
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 .site-footer .site-logo {
@@ -2449,7 +2450,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 .site-footer .copyright a {
-    color: #fff;
+    color: var(--color-theme-white);
     letter-spacing: -0.015em;
     font-weight: 500;
     font-size: 1.8rem
@@ -2470,12 +2471,12 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 .site-footer .social-media a {
-    color: #fff;
+    color: var(--color-theme-white);
     transition: all 0.1s ease-in-out;
 }
 
 .site-footer .social-media a:hover{
-    background-color: #fff;
+    background-color: var(--color-theme-white);
     color: #000;
 }
 
@@ -2493,7 +2494,7 @@ iframe.instagram-media + script + :not([id]) {
     flex-wrap: wrap;
     column-gap: 2rem;
     row-gap: 1rem;
-    color: white;
+    color: var(--color-theme-white);
     font-weight: 600;
 }
 
@@ -2504,7 +2505,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 .site-footer .footer-navbar li a {
-    color: white;
+    color: var(--color-theme-white);
     font-weight: 600;
     text-decoration: underline transparent;
 }
@@ -2537,20 +2538,20 @@ html.dark-mode kbd {
 }
 
 html.dark-mode figcaption a {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .gh-head {
     background: var(--color-darkmode);
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .gh-burger-box {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .site-header-content {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .post-card-image {
@@ -2562,11 +2563,11 @@ html.dark-mode :is(.post-card-tags, .post-card-meta, .article-tag a, .byline-met
 }
 
 html.dark-mode .post-card-featured {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .post-card-title {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .post-card-excerpt {
@@ -2574,19 +2575,19 @@ html.dark-mode .post-card-excerpt {
 }
 
 html.dark-mode .pagination a {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .author-profile-location {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .author-profile-social-link:hover {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .article-title {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .article-excerpt {
@@ -2611,7 +2612,7 @@ html.dark-mode .author-profile-image path {
 }
 
 html.dark-mode .article-byline-meta .author-name a {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .no-image .author-social-link a {
@@ -2633,19 +2634,19 @@ html.dark-mode .gh-content :not(pre) > code {
 }
 
 :where(html.dark-mode) .gh-content a {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .gh-content strong {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .gh-content em {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .gh-content code {
-    color: #fff;
+    color: var(--color-theme-white);
     background: #000;
 }
 
@@ -2699,11 +2700,11 @@ html.dark-mode .kg-header-card.kg-style-light {
 
 html.dark-mode .kg-header-card h2.kg-header-card-header,
 html.dark-mode .kg-header-card h3.kg-header-card-subheader {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 html.dark-mode .footer-cta-title {
-    color: #fff;
+    color: var(--color-theme-white);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -2721,20 +2722,20 @@ html.dark-mode .footer-cta-title {
     }
 
     html.auto-color figcaption a {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .gh-head {
         background: var(--color-darkmode);
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .gh-burger-box {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .site-header-content {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .post-card-image {
@@ -2746,11 +2747,11 @@ html.dark-mode .footer-cta-title {
     }
 
     html.auto-color .post-card-featured {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .post-card-title {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .post-card-excerpt {
@@ -2758,19 +2759,19 @@ html.dark-mode .footer-cta-title {
     }
 
     html.auto-color .pagination a {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .author-profile-location {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .author-profile-social-link:hover {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .article-title {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .article-excerpt {
@@ -2795,7 +2796,7 @@ html.dark-mode .footer-cta-title {
     }
 
     html.auto-color .article-byline-meta .author-name a {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .no-image .author-social-link a {
@@ -2817,19 +2818,19 @@ html.dark-mode .footer-cta-title {
     }
 
     :where(html.auto-color) .gh-content a {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .gh-content strong {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .gh-content em {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
     html.auto-color .gh-content code {
-        color: #fff;
+        color: var(--color-theme-white);
         background: #000;
     }
 
@@ -2883,11 +2884,11 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color .kg-header-card h2.kg-header-card-header,
     html.auto-color .kg-header-card h3.kg-header-card-subheader {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 
 html.auto-color .footer-cta-title {
-        color: #fff;
+        color: var(--color-theme-white);
     }
 }
 
