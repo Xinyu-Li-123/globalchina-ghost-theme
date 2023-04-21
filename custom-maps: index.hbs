@@ -2,54 +2,64 @@
 
 {{!-- The tag above means: insert everything in this file
 into the {body} tag of the default.hbs template --}}
+
 <style>
-    .index-image:hover {
-        opacity: 0.5;
-        transition: 0.3s;
+    .index-image-card {
+        transition: transform 0.3s ease-out;
+        position: relative;
+    }
+    .index-image-card:hover {
+        filter: brightness(0.5);
+        font-size: 3rem;
+    }
+    .index-image-card:hover::before {
+        opacity: 1;
+    }
+    .index-image-card::after {
+        content: attr(data-title);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem;
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+        opacity: 1;
+        transition: opacity 0.3s ease-out;
     }
 
 </style>
-
 {{#post}}
 {{!-- Everything inside the #post block pulls data from the post --}}
 
 <main id="site-main" class="site-main">
-
 {{> feature-image-to-banner}}
-
 <article class="article {{post_class}} {{#match @custom.post_image_style "Full"}}image-full{{else match @custom.post_image_style "=" "Small"}}image-small{{/match}}">
-
-    <section class="gh-content gh-canvas">
-        {{content}}
+<section class="gh-content gh-canvas">
+    {{content}}
 {{/post}}
-
-    </section>
-
-    <div class="row md-5"> 
-        {{#get "pages" filter="slug:~^'maps-'"  limit="all" }}
-        {{#foreach pages}}
-            <div class="col-sm-6 col-md-6 col-lg-4 mb-12 mb-lg-0">
-                {{!-- clickable feature image with title overlayed on it --}}
-                <a href="{{url}}" class="d-block">
-                <div class="position-relative">
-                    <img src="
-                    {{#if feature_image}}
-                        {{feature_image}}
-                    {{else}}
-                        {{asset 'image/dummy_image.jpg'}}
-                    {{/if}}
-                    "
-                     class="index-image img-fluid rounded" alt="{{title}}">
-                    <div class="overlay position-absolute top-0 start-0 d-flex flex-column justify-content-center">
-                    <h3 class="text-white mb-0">{{title}}</h3>
-                    </div>
-                </div>
-                </a>
+<div class="row mt-5 gx-5 gy-5"> 
+    {{#get "pages" filter="slug:~^'maps-'"  limit="all" }}
+    {{#foreach pages}}
+        <div class="index-image-card col-sm-12 col-md-6 col-lg-6 mb-6 mb-lg-0" data-title="{{title}}">
+            {{!-- clickable feature image with title overlayed on it --}}
+            <a href="{{url}}" class="d-block">
+            <div class="position-relative">
+                <img src="
+                {{#if feature_image}}
+                    {{feature_image}}
+                {{else}}
+                    {{asset 'image/dummy_image.jpg'}}
+                {{/if}}
+                "
+                 class="index-image rounded" alt="{{title}}">
             </div>
-        {{/foreach}}
-        {{/get}}
-
-    </div>
-
+            </a>
+        </div>
+    {{/foreach}}
+    {{/get}}
+</div>
+</section>
 </article>
 </main>
