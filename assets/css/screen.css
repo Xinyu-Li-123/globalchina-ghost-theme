@@ -95,15 +95,18 @@ production stylesheet in assets/built/screen.css
     /* 
         TODO:
         v blue: document navigation
+        
         v orange: nav button
+        
         x        floating subscribe button
+        
         v white: background
 
-        logo:
-            use extended, right aligned, (the one with overlay)
-            for mobile version, use a compact
+        v logo:
+            v use extended, right aligned, (the one with overlay)
+            x for mobile version, use a compact
 
-        put top view 
+        x put top view 
 
         v pdf load wrong on resize
 
@@ -112,10 +115,42 @@ production stylesheet in assets/built/screen.css
             text-color: theme-white
         
         make map full screen 
+        
         v delete map left-right padding
-        change content top padding smaller
+        
+        x change content top padding smaller
+        
         delete map banner
-        delete every padding around the map
+        
+        v delete every padding around the map
+
+        ask Jiayong to add map description, check if map info is correct, add fourth map
+
+        use homepage bg image (with filter) to replace banner and navigation bar and footer
+
+        conference => conversations 
+
+        logo in the front page bigger
+
+        footer use front-page bg image instead of pure color
+
+        Done by Sun evening (6pm / 9:30pm)
+
+        Meet with Anna and Prof on SUn 9am (Eastern Time)
+
+        Fix the title font
+
+        Subtext use same font for "Center for Global China"
+
+        Use this color for dropdown bg-color: rgba(239, 241, 246, 0.75)
+            and this border radius: 2rem
+
+        remove slider border
+
+        Use Anna's design of division of logo for different sections
+
+        Send prof her personal website on Wayback Machine 
+
     */
 
 
@@ -126,6 +161,12 @@ production stylesheet in assets/built/screen.css
     --ghost-accent-color: {value};
 
     You can use this variable throughout your styles
+
+    send screenshot of different font-family, font-weight to Prof for approval
+
+    give a list of texts to be written to professor
+
+    
      */
 
     /* Fonts */

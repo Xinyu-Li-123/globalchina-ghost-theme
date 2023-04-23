@@ -95,8 +95,14 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer no-infinite-scroll">
-<div class="inner posts">
+<div>
 
+</div>
+<div class="inner posts">
+    <div>
+        <h1>Navigation</h1>
+        <p>Blah Blah Blah Blah</p>
+    </div>
      {{#get "posts" filter="featured:true,featured:false" limit="5"}}
         {{> "carousel-slider"}}
     {{/get}}
