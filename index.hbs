@@ -71,7 +71,13 @@ into the {body} of the default.hbs template --}}
 </div>
 <div class="inner posts">
 
-    {{> "navbox"}}
+    {{> "index/nav-box"}}
+
+    {{> "index/our-resources"}}
+
+    <hr>
+
+    <h1 class="text-center">Read our meida and news</h1>
 
      {{#get "posts" filter="featured:true,featured:false" limit="5"}}
         {{> "carousel-slider"}}

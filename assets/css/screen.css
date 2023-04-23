@@ -151,6 +151,8 @@ production stylesheet in assets/built/screen.css
 
         Send prof her personal website on Wayback Machine 
 
+        Change megamenu animation
+
     */
 
 
@@ -228,8 +230,6 @@ production stylesheet in assets/built/screen.css
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5;
-    filter: contrast(1.5);
 }
 
 .site-header-cover-filter {
@@ -287,8 +287,8 @@ production stylesheet in assets/built/screen.css
 .site-logo-wrapper {
     width: fit-content;
     position: absolute;
-    right: 100px;
     top: -7rem;
+    right: 150px;
     scale: 0.9;
 }
 
@@ -313,23 +313,22 @@ production stylesheet in assets/built/screen.css
     .site-logo-wrapper {
         width: fit-content;
         position: absolute;
-        right: 0px;
+        right: 100px;
         top: -7rem;
-        scale: 1.5;
+        scale: 1.3;
     }
     .site-logo-wrapper .site-logo {
         transform: translate(1rem, 1rem);
-        scale: 1;
+        scale: 1.3;
     }
     .site-logo-wrapper .site-description {
         font-size: .7rem!important;
         left: -180px;
         margin-right: 2.4rem;
         position: absolute;
-        top: 60px;
+        top: 70px;
     }
 }
-
 
 .site-header-content.left-aligned .site-logo {
     margin-right: auto;
@@ -560,14 +559,15 @@ production stylesheet in assets/built/screen.css
     height: 88px;
     font-size: 1.6rem;
     line-height: 1.3em;
-    background-color: var(--color-theme-white);
+    background-color: var(--ghost-accent-color);
+    color: var(--color-theme-white);
     z-index: 6;     /* gh-head > site-footer > site-content */
 }
 
-.has-cover:not(.home-template) .gh-head {
+/* .has-cover:not(.home-template) .gh-head {
     background-color: var(--ghost-accent-color);
     color: var(--color-theme-white);
-}
+} */
 
 :is(.home-template, .paged:not(.tag-template):not(.author-template)).has-cover .gh-head {
     position: absolute;
@@ -1144,21 +1144,42 @@ production stylesheet in assets/built/screen.css
 
 /* Navigation box (float between gh-head and site-main)
 /* ---------------------------------------------------------- */
-.navbox {
+.nav-box {
     background-color: var(--color-theme-cyan);
     border: 10px solid var(--color-theme-cyan);
     border-radius: 5px;
     position: absolute;
-    top: -50px;
+    transform: translate(0, -100%);
     width: 80%;
     left: 10%;
 }
 
+.nav-box .nav-box-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 20px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-box h1 {
+    text-align: center;
+}
+
+.nav-box p {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 @media (max-width: 800px) {
-    .navbox {
-        top: -35px;
+    .nav-box {
+        transform: translate(0, -60%);
     }
 }
+
 
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
@@ -2487,7 +2508,7 @@ iframe.instagram-media + script + :not([id]) {
     padding-top: 48px;
     padding-bottom: 140px;
     color: var(--color-theme-white);
-    background: color-mod(var(--color-darkgrey) l(-5%));
+    /* background: color-mod(var(--color-darkgrey) l(-5%)); */
     border: var(--color-theme-white) solid;
     border-width: max(12vmin,64px) 0 0;
     z-index: 5;

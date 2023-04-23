@@ -1,0 +1,63 @@
+<style>
+    .resource-box-wrapper {
+        top: 10%;
+    }
+
+    .resource-box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .resource-item {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .resource-icon {
+        width: 60%;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .resource-icon:hover {
+        scale: 1.2;
+    }
+
+</style>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="resource-box-wrapper">
+<h1 class="text-center">Our resources</h1>
+<p class="text-center" style="font-size: 1.2rem"><b>Explore our resources</b></p>
+<div class="resource-box">
+    <a class="resource-item" href="/about-our-mission">
+        <img class="resource-icon" src="{{asset 'image/logo/Icon CFGB color-0.png'}}" />
+        <h2 class="resource-title">About</h2>
+    </a>
+    <a class="resource-item" href="/maps">
+        <img class="resource-icon" src="{{asset 'image/logo/Icon CFGB color-1.png'}}" />
+        <h2 class="resource-title">Maps</h2>
+    </a>
+    <a class="resource-item" href="/research">
+        <img class="resource-icon" src="{{asset 'image/logo/Icon CFGB color-2.png'}}" />
+        <h2 class="resource-title">Research</h2>
+    </a>
+    <a class="resource-item" href="/media">
+        <img class="resource-icon" src="{{asset 'image/logo/Icon CFGB color-3.png'}}" />
+        <h2 class="resource-title">Media</h2>
+    </a>
+</div>
+</div>
+<br />
+<br />

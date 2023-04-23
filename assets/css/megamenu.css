@@ -84,6 +84,14 @@ div.gh-head
   padding: 0;
 }
 
+.gh-head-menu .nav-item .dropdown-menu h3 {
+  background-color: var(--color-theme-white);
+}
+
+.gh-head-menu .nav-item .dropdown-menu a {
+  background-color: var(--color-theme-white);
+}
+
 /* on mobile phone */
 @media (max-width: 800px) {
   /* hide actions so that it won't occlude megamenu dropdown */
