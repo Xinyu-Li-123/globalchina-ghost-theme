@@ -70,8 +70,8 @@ div.gh-head
   border: black solid 0.2rem;
   border-top-left-radius: 0;
   border-top-right-radius: 0rem;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
   background-color: var(--color-theme-white);
   height: auto;
   overflow: hidden;

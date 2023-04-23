@@ -120,39 +120,51 @@ production stylesheet in assets/built/screen.css
         
         x change content top padding smaller
         
-        delete map banner
+        v delete map banner
         
         v delete every padding around the map
 
         v ask Jiayong to add map description, check if map info is correct, add fourth map
 
-        use homepage bg image (with filter) to replace banner and navigation bar and footer
+        v use homepage bg image (with filter) to replace banner and navigation bar and footer
 
-        conversation => conversations 
+        v conference => conversation
 
         v logo in the front page bigger
 
-        footer use front-page bg image instead of pure color
+        v footer use front-page bg image instead of pure color
 
         Done by Sun evening (6pm / 9:30pm)
 
-        Meet with Anna and Prof on SUn 9am (Eastern Time)
+        x Meet with Anna and Prof on SUn 9am (Eastern Time)
 
-        Fix the title font
+        v Fix the title font
 
-        Subtext use same font for "Center for Global China"
+        v Subtext use same font for "Center for Global China"
 
-        Use this color for dropdown bg-color: rgba(239, 241, 246, 0.75)
+        v Use this color for dropdown bg-color: rgba(239, 241, 246, 0.75)
             and this border radius: 2rem
 
         v remove slider border
 
-        Use Anna's design of division of logo for different sections
+        v Use Anna's design of division of logo for different sections
 
-        Send prof her personal website on Wayback Machine 
+        v Send prof her personal website on Wayback Machine 
 
         Change megamenu animation
 
+        Replace About globe with "Education" 
+        Globe (follow this order): 
+            Maps Research Media Education
+
+        Change nav-box to: 
+            remove "navigation" and arrow, replace with "..."
+        
+        For homepage only, keeps only "About: in navbar
+
+        Add "Education" to navbar as a placeholder (education navbar and globe lead to "Comming soon" page)
+
+        Ask Anna for the images
     */
 
 
@@ -370,7 +382,8 @@ production stylesheet in assets/built/screen.css
 .has-sans-title .article-title,
 .has-sans-title .gh-content > [id],
 .has-sans-title .kg-toggle-card .kg-toggle-heading-text,
-.has-sans-title .kg-header-card h2.kg-header-card-header {
+.has-sans-title .kg-header-card h2.kg-header-card-header,
+.has-serif-title .footer-navbar {
     font-family: var(--font-sans);
 }
 .has-serif-title .site-title,
@@ -386,7 +399,6 @@ production stylesheet in assets/built/screen.css
 .has-serif-title .gh-content > [id],
 .has-serif-title .kg-toggle-card .kg-toggle-heading-text,
 .has-serif-title .kg-header-card h2.kg-header-card-header,
-.has-serif-title .nav-link,
 .has-serif-title .footer-navbar {
     font-family: var(--font-serif);
 }
@@ -403,7 +415,6 @@ production stylesheet in assets/built/screen.css
 .has-upheaval-title .gh-content > [id],
 .has-upheaval-title .kg-toggle-card .kg-toggle-heading-text,
 .has-upheaval-title .kg-header-card h2.kg-header-card-header,
-.has-upheaval-title .nav-link,
 .has-upheaval-title .footer-navbar {
     font-family: var(--font-upheaval);
 }
@@ -421,7 +432,6 @@ production stylesheet in assets/built/screen.css
 .has-romanaboldbt-title .gh-content > [id],
 .has-romanaboldbt-title .kg-toggle-card .kg-toggle-heading-text,
 .has-romanaboldbt-title .kg-header-card h2.kg-header-card-header,
-.has-romanaboldbt-title .nav-link,
 .has-romanaboldbt-title .footer-navbar {
     font-family: var(--font-romanboldbt);
 }
@@ -439,7 +449,6 @@ production stylesheet in assets/built/screen.css
 .has-roboto-title .gh-content > [id],
 .has-roboto-title .kg-toggle-card .kg-toggle-heading-text,
 .has-roboto-title .kg-header-card h2.kg-header-card-header,
-.has-roboto-title .nav-link,
 .has-roboto-title .footer-navbar {
     font-family: var(--font-roboto);
 }
@@ -554,6 +563,7 @@ production stylesheet in assets/built/screen.css
 /* Parallax scrolling at index page */
 .home-template .site-header-content {
   z-index: 1;
+  height: 100vh;
 }
 
 .home-template .site-header-content .site-header-cover {
