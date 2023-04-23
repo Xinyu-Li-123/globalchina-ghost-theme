@@ -124,13 +124,13 @@ production stylesheet in assets/built/screen.css
         
         v delete every padding around the map
 
-        ask Jiayong to add map description, check if map info is correct, add fourth map
+        v ask Jiayong to add map description, check if map info is correct, add fourth map
 
         use homepage bg image (with filter) to replace banner and navigation bar and footer
 
         conference => conversations 
 
-        logo in the front page bigger
+        v logo in the front page bigger
 
         footer use front-page bg image instead of pure color
 
@@ -145,7 +145,7 @@ production stylesheet in assets/built/screen.css
         Use this color for dropdown bg-color: rgba(239, 241, 246, 0.75)
             and this border radius: 2rem
 
-        remove slider border
+        v remove slider border
 
         Use Anna's design of division of logo for different sections
 
@@ -256,7 +256,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .has-cover .site-header-content {
-    min-height: 560px;
+    min-height: 400px;
     background-color: var(--ghost-accent-color);
     color: var(--color-theme-white);
 }
@@ -284,11 +284,52 @@ production stylesheet in assets/built/screen.css
     align-items: flex-start;
 }
 
-.site-logo {
+.site-logo-wrapper {
+    width: fit-content;
+    position: absolute;
+    right: 100px;
+    top: -7rem;
+    scale: 0.9;
+}
+
+.site-logo-wrapper .site-logo {
     flex-shrink: 0;
     margin: 0 auto;
     max-height: 120px;
+    transform: translate(8rem, -1rem);
+    scale: 1.5;
 }
+
+.site-logo-wrapper .site-description {
+    font-size: 1.5rem !important;
+    margin-right: 2.4rem;
+    position: absolute;
+    top: 90px;
+    width: 200%;
+    left: -120px;
+}
+
+@media (max-width: 800px) {
+    .site-logo-wrapper {
+        width: fit-content;
+        position: absolute;
+        right: 0px;
+        top: -7rem;
+        scale: 1.5;
+    }
+    .site-logo-wrapper .site-logo {
+        transform: translate(1rem, 1rem);
+        scale: 1;
+    }
+    .site-logo-wrapper .site-description {
+        font-size: .7rem!important;
+        left: -180px;
+        margin-right: 2.4rem;
+        position: absolute;
+        top: 60px;
+    }
+}
+
 
 .site-header-content.left-aligned .site-logo {
     margin-right: auto;
@@ -363,7 +404,8 @@ production stylesheet in assets/built/screen.css
 .has-romanaboldbt-title .article-title,
 .has-romanaboldbt-title .gh-content > [id],
 .has-romanaboldbt-title .kg-toggle-card .kg-toggle-heading-text,
-.has-romanaboldbt-title .kg-header-card h2.kg-header-card-header {
+.has-romanaboldbt-title .kg-header-card h2.kg-header-card-header,
+.has-romanaboldbt-title .nav-link {
     font-family: var(--font-romanboldbt);
 }
 
@@ -689,7 +731,6 @@ production stylesheet in assets/built/screen.css
     transform: scale(1.2); /* Enlarge the icon by 20% on hover */
     }
 }
-
 
 
 /* Primary Navigation
@@ -1101,6 +1142,23 @@ production stylesheet in assets/built/screen.css
     }
 }
 
+/* Navigation box (float between gh-head and site-main)
+/* ---------------------------------------------------------- */
+.navbox {
+    background-color: var(--color-theme-cyan);
+    border: 10px solid var(--color-theme-cyan);
+    border-radius: 5px;
+    position: absolute;
+    top: -50px;
+    width: 80%;
+    left: 10%;
+}
+
+@media (max-width: 800px) {
+    .navbox {
+        top: -35px;
+    }
+}
 
 /* 6. Post Feed
 /* ---------------------------------------------------------- */

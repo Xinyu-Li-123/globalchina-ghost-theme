@@ -48,36 +48,7 @@ into the {body} of the default.hbs template --}}
                 {{/if}}
             {{else}}
             <style>
-                .site-logo-wrapper .site-logo {
-                    transform: translate(8rem, -1rem);
-                    scale: 1.5;
-                }
-                .site-logo-wrapper .site-description {
-                    margin-right: 2.4rem;
-                }
-
-                .site-logo-wrapper {
-                    width: fit-content;
-                    position: absolute;
-                    right: 100px;
-                    top: -7rem;
-                }
-
-                @media (max-width: 800px) {
-                    .site-logo-wrapper {
-                        width: 100%;
-                        position: absolute;
-                        right: 0px;
-                        top: -7rem;
-                    }
-                    .site-logo-wrapper .site-logo {
-                        transform: translate(1rem, 1rem);
-                        scale: 1;
-                    }
-                    .site-logo-wrapper .site-description {
-                        font-size: 1.8rem !important;
-                    }
-                }
+                
             </style>
                 <div class="site-logo-wrapper">
                     <img class="site-logo" src="{{asset 'design/logo_graphic_white.png'}}" alt="{{@site.title}}">
@@ -99,10 +70,9 @@ into the {body} of the default.hbs template --}}
 
 </div>
 <div class="inner posts">
-    <div>
-        <h1>Navigation</h1>
-        <p>Blah Blah Blah Blah</p>
-    </div>
+
+    {{> "navbox"}}
+
      {{#get "posts" filter="featured:true,featured:false" limit="5"}}
         {{> "carousel-slider"}}
     {{/get}}

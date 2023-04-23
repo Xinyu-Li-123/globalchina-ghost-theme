@@ -72,9 +72,17 @@ div.gh-head
   border-top-right-radius: 0rem;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+  background-color: var(--color-theme-white);
+  height: auto;
+  overflow: hidden;
 }
 
-
+.gh-head-menu .nav-item .dropdown-menu.hidden {
+  height: 0px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+}
 
 /* on mobile phone */
 @media (max-width: 800px) {
