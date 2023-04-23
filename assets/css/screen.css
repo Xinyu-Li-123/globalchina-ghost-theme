@@ -150,19 +150,19 @@ production stylesheet in assets/built/screen.css
         v Use Anna's design of division of logo for different sections
 
         v Send prof her personal website on Wayback Machine 
-
+S
         Change megamenu animation
 
-        Replace About globe with "Education" 
-        Globe (follow this order): 
+        v Replace About globe with "Education" 
+        v Globe (follow this order): 
             Maps Research Media Education
 
-        Change nav-box to: 
+        x Change nav-box to: 
             remove "navigation" and arrow, replace with "..."
         
-        For homepage only, keeps only "About: in navbar
+        v For homepage only, keeps only "About: in navbar
 
-        Add "Education" to navbar as a placeholder (education navbar and globe lead to "Comming soon" page)
+        v Add "Education" to navbar as a placeholder (education navbar and globe lead to "Comming soon" page)
 
         Ask Anna for the images
     */
@@ -1194,7 +1194,15 @@ production stylesheet in assets/built/screen.css
     padding: 0 20px;
     color: inherit;
     text-decoration: none;
+    scale: 0.8;
+    color: var(--color-theme-white);
 }
+
+.nav-box .nav-box-link:hover {
+    scale: 0.9;
+    transition: scale 0.2s ease-in-out;
+}
+
 
 .nav-box h1 {
     text-align: center;

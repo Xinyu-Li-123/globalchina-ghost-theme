@@ -13,11 +13,11 @@
 
     {{> nav-megamenu/research }}
 
-    {{!-- {{> nav-megamenu/policy }} --}}
-
-    {{!-- {{> nav-megamenu/education }} --}}
-
     {{> nav-megamenu/media }}
+
+    {{> nav-megamenu/education }}
+
+    {{!-- {{> nav-megamenu/policy }} --}}
 </nav>
 {{!-- Sample megamenu content
 
@@ -43,3 +43,15 @@
   </div>
 
  --}}
+
+ <script>
+    // if at home (has "home-template" as class), hide all but first nav-links
+    if (document.querySelector(".home-template")) {
+        document.querySelectorAll(".nav-item").forEach((item, index) => {
+            if (index > 0) {
+                item.style.display = "none";
+            }
+        });
+    }
+
+</script>

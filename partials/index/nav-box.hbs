@@ -4,6 +4,19 @@
             <h1>Navigation</h1>
             <i class="fa-solid fa-caret-down"></i>
         </a>
-        <p>Center for Global China provides maps, datasets, and research on Chinese overseas engagement, including the Belt and Road Initiative, to help </p>
+        <p>
+            {{#if @custom.footer_description}}
+                <p>{{@custom.footer_description}}</p>
+            {{else}}
+                <p>Center for Global China provides maps, datasets, and research on Chinese overseas engagement, including the Belt and Road Initiative, to help understand its impact</p>
+            {{/if}}
+        </p>
     </div>  
 </div>
+
+<script>
+    // always keep only "Navigation" inside viewport at first
+    $(".nav-box").onresize = function() {
+        $(".nav-box").css({top: $(".nav-box-link").height()});
+    }
+</script>
