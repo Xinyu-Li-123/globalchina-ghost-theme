@@ -1,115 +1,42 @@
 {{!< default}}
 
+{{!-- The tag above means: insert everything in this file
+into the {body} tag of the default.hbs template --}}
 
+{{> "img-navbar"}}
+<div class="content-wrapper">
 
 {{#post}}
+{{!-- Everything inside the #post block pulls data from the post --}}
 
 <main id="site-main" class="site-main">
 
-<style>
-.article-image {
-    color: white;
-}
-.article-image .image-container {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-}
-.article-image .image-container img {
-    display: block;
-    width: 100%;
-    min-height: 250px;
-}
-.article-image .image-container:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-theme-lightblue) !important;
-    z-index: 1;
-}
-.gh-head {
-    background-color: var(--color-theme-blue) !important;
-}
-.article-image header {
-    position: absolute;
-    top: 260px;
-    z-index: 2;
-    width: 100%;
-}
-.article-image header h1 {
-    color: white;
-}
-
-.page-with-banner .article {
-    padding: 40px;
-}
-
-
-@media (max-width: 800px) {
-    .article-image .image-container img {
-        height: 150px;
-    }
-    .article-image header {
-        top: 150px;
-    }
-    .page-with-banner .article {
-        padding: 20px;
-    }
-}
-</style>
-
-
-    <figure class="article-image">
-        <div class="image-container">
-        </div>  
-
-        <header class="article-header gh-canvas outer">
-            <h1 class="article-title inner">{{title}}</h1>
-        </header>
-    </figure>
-
-
-<script type="text/javascript">
-    document.getElementById("site-main").classList.add("page-with-banner");
-    // place header s.t. its bottom is 10px above the bottom of the image
-    window.onresize = function() {
-        $(".article-header").css("top", $(".image-container").height() + 
-            $(".gh-head.outer").height() - $(".article-header").height() - 10 + "px");
-    }
-    window.onresize();    
-</script>
-
-<style>
-    .article {
-        padding: 0px !important ;
-    }
-
-    .embed-container {
-        margin: 0;
-    }
-
-    .article-image {
-        margin-bottom: 0;
-    }
-
-    .article-header {
-        text-align: center;
-    }
-
-    .site-footer {
-        border: none;
-    }
-
-    .image-container {
-        height: 120px !important;
-    }
-
-</style>
-
 <article class="article {{post_class}} {{#match @custom.post_image_style "Full"}}image-full{{else match @custom.post_image_style "=" "Small"}}image-small{{/match}}">
+
+    <header class="article-header gh-canvas">
+
+        <h1 class="article-title">{{title}}</h1>
+
+        {{#if feature_image}}
+            <figure class="article-image">
+                {{!-- This is a responsive image, it loads different sizes depending on device
+                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+                <img
+                    srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1000w,
+                            {{img_url feature_image size="xl"}} 2000w"
+                    sizes="(min-width: 1400px) 1400px, 92vw"
+                    src="{{img_url feature_image size="xl"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                />
+                {{#if feature_image_caption}}
+                    <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+            </figure>
+        {{/if}}
+
+    </header>
 
     <section class="gh-content gh-canvas">
         {{content}}
@@ -122,4 +49,4 @@
 
 {{/post}}
 
-
+</div>

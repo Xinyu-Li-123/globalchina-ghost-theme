@@ -3,6 +3,8 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} tag of the default.hbs template --}}
 
+{{> "img-navbar"}}
+<div class="content-wrapper">
 
 {{#post}}
 {{!-- Everything inside the #post block pulls data from the post --}}
@@ -64,14 +66,14 @@ into the {body} tag of the default.hbs template --}}
 
   <div class="row">
     <div class="col-12">
-      <a class="section-title" href="/media-conference">
+      <a class="section-title" href="/media-conversation">
         <h1 class="d-flex align-items-center">
           <i class="fa-solid fa-video me-2"></i>
-          Conference
+          Conversation
         </h1>
       </a>
       <p class="post-card-excerpt">
-        Dive deeper into the world of global China with our handpicked collection of captivating videos! You'll find everything from thought-provoking interviews with leading experts to thrilling recordings of the latest conferences, all in one place.
+        Dive deeper into the world of global China with our handpicked collection of captivating videos! You'll find everything from thought-provoking interviews with leading experts to thrilling recordings of the latest conversations, all in one place.
       </p>
       <br>
       
@@ -84,7 +86,7 @@ into the {body} tag of the default.hbs template --}}
         </h1>
       </a>
       <p class="post-card-excerpt">
-        Take a step into the world of global China with our exciting timeline of events! From fascinating talks and workshops to groundbreaking conferences, you'll stay up-to-date on all the latest happenings in the world of global China.
+        Take a step into the world of global China with our exciting timeline of events! From fascinating talks and workshops to groundbreaking conversations, you'll stay up-to-date on all the latest happenings in the world of global China.
       </p>
       <br>
     </div>
@@ -110,3 +112,5 @@ into the {body} tag of the default.hbs template --}}
 </main>
 
 {{/post}}
+
+</div>

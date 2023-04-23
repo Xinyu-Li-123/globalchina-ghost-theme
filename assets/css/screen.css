@@ -128,7 +128,7 @@ production stylesheet in assets/built/screen.css
 
         use homepage bg image (with filter) to replace banner and navigation bar and footer
 
-        conference => conversations 
+        conversation => conversations 
 
         v logo in the front page bigger
 
@@ -222,7 +222,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .site-header-cover {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -253,10 +253,23 @@ production stylesheet in assets/built/screen.css
     padding-bottom: 19vmin;
     text-align: center;
     color: var(--color-darkgrey);
+    z-index: 1;
+}
+
+.home-template .site-header-content {
+    min-height: 400px !important;
+    height: 120px;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-theme-white);
 }
 
 .has-cover .site-header-content {
-    min-height: 400px;
+    padding: 0;
+    min-height: 120px;
     background-color: var(--ghost-accent-color);
     color: var(--color-theme-white);
 }
@@ -372,7 +385,9 @@ production stylesheet in assets/built/screen.css
 .has-serif-title .article-title,
 .has-serif-title .gh-content > [id],
 .has-serif-title .kg-toggle-card .kg-toggle-heading-text,
-.has-serif-title .kg-header-card h2.kg-header-card-header {
+.has-serif-title .kg-header-card h2.kg-header-card-header,
+.has-serif-title .nav-link,
+.has-serif-title .footer-navbar {
     font-family: var(--font-serif);
 }
 .has-upheaval-title .site-title,
@@ -387,7 +402,9 @@ production stylesheet in assets/built/screen.css
 .has-upheaval-title .article-title,
 .has-upheaval-title .gh-content > [id],
 .has-upheaval-title .kg-toggle-card .kg-toggle-heading-text,
-.has-upheaval-title .kg-header-card h2.kg-header-card-header {
+.has-upheaval-title .kg-header-card h2.kg-header-card-header,
+.has-upheaval-title .nav-link,
+.has-upheaval-title .footer-navbar {
     font-family: var(--font-upheaval);
 }
 
@@ -404,7 +421,8 @@ production stylesheet in assets/built/screen.css
 .has-romanaboldbt-title .gh-content > [id],
 .has-romanaboldbt-title .kg-toggle-card .kg-toggle-heading-text,
 .has-romanaboldbt-title .kg-header-card h2.kg-header-card-header,
-.has-romanaboldbt-title .nav-link {
+.has-romanaboldbt-title .nav-link,
+.has-romanaboldbt-title .footer-navbar {
     font-family: var(--font-romanboldbt);
 }
 
@@ -420,7 +438,9 @@ production stylesheet in assets/built/screen.css
 .has-roboto-title .article-title,
 .has-roboto-title .gh-content > [id],
 .has-roboto-title .kg-toggle-card .kg-toggle-heading-text,
-.has-roboto-title .kg-header-card h2.kg-header-card-header {
+.has-roboto-title .kg-header-card h2.kg-header-card-header,
+.has-roboto-title .nav-link,
+.has-roboto-title .footer-navbar {
     font-family: var(--font-roboto);
 }
 
@@ -569,7 +589,8 @@ production stylesheet in assets/built/screen.css
     color: var(--color-theme-white);
 } */
 
-:is(.home-template, .paged:not(.tag-template):not(.author-template)).has-cover .gh-head {
+/* :is(.home-template, .paged:not(.tag-template):not(.author-template)).has-cover .gh-head { */
+.gh-head {
     position: absolute;
     top: 0;
     right: 0;

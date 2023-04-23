@@ -1,5 +1,8 @@
 {{!< default}}
 
+{{> "img-navbar"}}
+<div class="content-wrapper">
+
 {{!-- The tag above means: insert everything in this file
 into the {body} tag of the default.hbs template --}}
 
@@ -91,6 +94,8 @@ into the {body} tag of the default.hbs template --}}
 
 {{/post}}
 
+</div>
+
 <script>
     // flip odd number cards (left: img, right: text => right: img, left: text)
     const eventCards = document.querySelectorAll('.event-card');
@@ -100,3 +105,4 @@ into the {body} tag of the default.hbs template --}}
         }
     });
 </script>
+
